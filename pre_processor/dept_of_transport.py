@@ -21,8 +21,7 @@ class DepartmentOfTransportDatasetProcessor(object):
     def _retrieve_data(self):
         # TODO check whether file exist
         link_address = self.base_url + self._generate_filename()
-        print link_address
-        response = wget.download(link_address)
+        wget.download(link_address)
 
     def _delete_files(self):
         pass
