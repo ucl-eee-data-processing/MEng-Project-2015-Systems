@@ -27,7 +27,7 @@ class DepartmentOfTransportDatasetProcessor(object):
         filename = 'deptfortransport_' + month + '-' + str(year) + '.csv'
         return filename
 
-    def _time_current_dataset(self):
+    def _current_dataset_month(self):
         dataset = ''
         for file in os.listdir(PROCESSOR_DIR):
             if file.endswith(".csv"):
@@ -36,7 +36,21 @@ class DepartmentOfTransportDatasetProcessor(object):
             dataset_month = dataset.split("_")[1].split("-")[0]
             return strptime(dataset_month,'%b').tm_mon
         except IndexError:
-            return None 
+            return None
+
+    def _get_datapoint(self, filename, date, time):
+        print time
+        print date
+        data_list = []
+        data_points = {}
+        with open(filename, 'rb') as csvfile:
+            reader = csv.DictReader(csvfile)
+            for row in reader:
+                if date in row.values():
+                    data_list.append(row)
+        for data in data_list:
+            data_points.update({data['Meter']: data[time]})
+        return data_points
 
     def download_dataset(self):
         # TODO check whether file exist
@@ -50,20 +64,27 @@ class DepartmentOfTransportDatasetProcessor(object):
         # Replays the data from a certain date to today
         pass
 
-    def publish_data(self):
-        # Check the date today
-        # Check current time if minutes 0 : 30 read previous hour
-        # if minutes  30 - 59 read  data point at half pass
+    def publish_real_time_data(self):
         time = datetime.datetime.now().strftime('%d/%m/%y %H:%M')
-        time_arr = time.split(" ")
-        date = time_arr[0]
-        hours = time_arr[1]
-        print date 
-        print hours
+        date_time = time.split(" ")
+        date ,time_today = date_time[0] ,date_time[1]
+        if self._current_dataset_month() == int(date.split("/")[1]):
+            time_list = time_today.split(":")
+            hour ,minutes = time_list[0], time_list[1]
+            if int(minutes) < 31:
+                #self._generate_filename() 
+                datapoint = self._get_datapoint('deptfortransport_dec-2015.csv' ,'26/11/2015', hour + ':00')
+                print datapoint
+            else:
+                datapoint = self._get_datapoint('deptfortransport_dec-2015.csv' , '26/11/2015', hour + ':30')
+                print datapoint
+        else:
+            pass 
+            # Remove the old one and download the lastest one
 
 if __name__ == '__main__':
     dataset = DepartmentOfTransportDatasetProcessor()
-    print dataset._time_current_dataset()
-    dataset.publish_data()
+    #print dataset._time_current_dataset()
+    dataset.publish_real_time_data()
 
 
