@@ -2,3 +2,5 @@
 *.pyc
 *.vagrant/
 *.csv
+.DS_Store
+

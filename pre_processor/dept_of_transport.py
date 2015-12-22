@@ -42,6 +42,7 @@ class DepartmentOfTransportDatasetProcessor(object):
         with open(filename, 'rb') as csvfile:
             reader = csv.DictReader(csvfile)
             for row in reader:
+                #print row
                 if date in row.values():
                     data_list.append(row)
         for data in data_list:
@@ -63,6 +64,8 @@ class DepartmentOfTransportDatasetProcessor(object):
         if os.path.isfile(PROCESSOR_DIR + '/' + filename):
             for iter_date in range(month_range[0], month_range[1] +1):
                 # Month is hard coded
+                if len(str(iter_date)) == 1:
+                    iter_date = '0' + str(iter_date)
                 date = str(iter_date) + '/' + '11' + '/' + str(year)
                 date_data = {}
                 for iter_minutes in range(0,1440,30):
@@ -105,6 +108,7 @@ if __name__ == '__main__':
     dataset = DepartmentOfTransportDatasetProcessor()
     #print dataset._time_current_dataset()
     #dataset.publish_real_time_data()
-    print dataset.replay('dec',2015)
+    #print dataset._get_datapoint('deptfortransport_dec-2015.csv' , '1/11/15', '00' + ':30')
+    print dataset.replay('dec',2015)['02/11/2015']
 
 
