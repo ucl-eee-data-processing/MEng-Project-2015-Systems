@@ -15,7 +15,6 @@ class DepartmentOfTransportDatasetProcessor(object):
         self.base_url = 'http://www.ecodriver.uk.com/eCMS/Files/DFT/'
 
     def _generate_filename(self, month=None, year=None):
-
         if month == None and year == None:
             time_now = datetime.datetime.now()
             month = time_now.strftime('%B')[:3].lower()
@@ -42,7 +41,6 @@ class DepartmentOfTransportDatasetProcessor(object):
         with open(filename, 'rb') as csvfile:
             reader = csv.DictReader(csvfile)
             for row in reader:
-                #print row
                 if date in row.values():
                     data_list.append(row)
         for data in data_list:
@@ -53,37 +51,41 @@ class DepartmentOfTransportDatasetProcessor(object):
         link_address = self.base_url + filename
         wget.download(link_address)
 
-    def remove_dataset(self, filename):
-        pass
-
-    def replay(self, month, year):
+    def _replay_helper(self, month, year):
         filename = self._generate_filename(month=month, year=year)
         numerical_month = strptime(month,'%b').tm_mon
         month_range = monthrange(year, numerical_month)
         month_data = {}
+        for iter_date in range(1, month_range[1]):
+            if len(str(iter_date)) == 1:
+                iter_date = '0' + str(iter_date)
+            if len(str(numerical_month)) == 1:
+                numerical_month = '0' + str(numerical_month)
+            date = str(iter_date) + '/' + str(numerical_month) + '/' + str(year)
+            date_data = {}
+            for iter_minutes in range(0,1440,30):
+                hour = iter_minutes // 60
+                minutes = iter_minutes % 60
+                if len(str(hour)) == 1:
+                    hour = '0' + str(hour)
+                if len(str(minutes)) == 1:
+                    minutes = '0' + str(minutes)
+                time = str(hour) + ':' + str(minutes)
+
+                datapoint = self._get_datapoint(filename ,date, time)
+                date_data.update({time: datapoint})
+            month_data.update({date: date_data})
+        return month_data
+
+    def replay(self, month, year):
+        filename = self._generate_filename(month=month, year=year)
         if os.path.isfile(PROCESSOR_DIR + '/' + filename):
-            for iter_date in range(month_range[0], month_range[1] +1):
-                # Month is hard coded
-                if len(str(iter_date)) == 1:
-                    iter_date = '0' + str(iter_date)
-                date = str(iter_date) + '/' + '11' + '/' + str(year)
-                date_data = {}
-                for iter_minutes in range(0,1440,30):
-                    hour = iter_minutes // 60
-                    minutes = iter_minutes % 60
-                    if len(str(hour)) == 1:
-                        hour = '0' + str(hour)
-                    if len(str(minutes)) == 1:
-                        minutes = '0' + str(minutes)
-                    time = str(hour) + ':' + str(minutes)
-                    datapoint = self._get_datapoint(filename ,date, time)
-                    date_data.update({time: datapoint})
-                month_data.update({date: date_data})
-            return month_data            
+            month_dataset = self._replay_helper(month=month, year=year)
         else:
             self._download_dataset(filename)
-
-
+            month_dataset = self._replay_helper(month=month, year=year)
+        os.remove(os.path.join(PROCESSOR_DIR, filename))
+        return month_dataset
 
     def publish_real_time_data(self):
         time = datetime.datetime.now().strftime('%d/%m/%y %H:%M')
@@ -105,10 +107,6 @@ class DepartmentOfTransportDatasetProcessor(object):
             # There is no current data 
 
 if __name__ == '__main__':
-    dataset = DepartmentOfTransportDatasetProcessor()
-    #print dataset._time_current_dataset()
-    #dataset.publish_real_time_data()
-    #print dataset._get_datapoint('deptfortransport_dec-2015.csv' , '1/11/15', '00' + ':30')
-    print dataset.replay('dec',2015)['02/11/2015']
+    print dataset.replay('nov',2013)
 
 
