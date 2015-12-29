@@ -5,6 +5,7 @@ import csv
 import glob
 from time import strptime
 from calendar import monthrange
+import json
 
 PROCESSOR_DIR = os.path.abspath(os.path.dirname(__file__))
 
@@ -107,6 +108,9 @@ class DepartmentOfTransportDatasetProcessor(object):
             # There is no current data 
 
 if __name__ == '__main__':
-    print dataset.replay('nov',2013)
+    dataset = DepartmentOfTransportDatasetProcessor()
+    with open('data.txt', 'w') as outfile:
+        json.dump(dataset.replay('jan',2015), outfile)
+    #print dataset.replay('jan',2013)
 
 
