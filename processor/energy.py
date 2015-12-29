@@ -10,7 +10,7 @@ import json
 PROCESSOR_DIR = os.path.abspath(os.path.dirname(__file__))
 
 
-class DepartmentOfTransportDatasetProcessor(object):
+class EnergyDataset(object):
 
     def __init__(self, offset=None, year=None, month=None):
         self.base_url = 'http://www.ecodriver.uk.com/eCMS/Files/DFT/'
@@ -108,9 +108,7 @@ class DepartmentOfTransportDatasetProcessor(object):
             # There is no current data 
 
 if __name__ == '__main__':
-    dataset = DepartmentOfTransportDatasetProcessor()
-    with open('data.txt', 'w') as outfile:
-        json.dump(dataset.replay('jan',2015), outfile)
-    #print dataset.replay('jan',2013)
+    dataset = EnergyDataset()
+    print dataset.replay('jan',2015)
 
 
