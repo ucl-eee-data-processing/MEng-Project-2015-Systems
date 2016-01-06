@@ -2,7 +2,6 @@ import os
 import wget
 import datetime
 import csv
-import glob
 from time import strptime
 from calendar import monthrange
 import json

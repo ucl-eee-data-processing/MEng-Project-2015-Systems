@@ -1,0 +1,371 @@
+2016-01-06 13:36:29,563.563.668966293:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:30,000.0.142097473145:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:30,003.3.57508659363:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:30,024.24.5580673218:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:30,027.27.8069972992:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:30,047.47.502040863:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:30,050.50.628900528:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:30,071.71.3651180267:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:30,074.74.6259689331:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:30,093.93.5020446777:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:30,096.96.7419147491:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:30,121.121.95110321:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:30,125.125.416040421:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:30,148.148.839950562:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:30,153.153.067111969:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:30,174.174.196958542:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:30,177.177.572011948:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:30,197.197.685003281:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:30,201.201.013088226:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:30,227.227.499961853:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:30,230.230.389118195:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:30,252.252.710103989:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:30,256.256.623983383:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:30,275.275.842905045:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:30,278.278.752088547:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:30,299.299.218893051:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:30,302.302.654027939:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:30,323.323.543071747:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:30,326.326.522111893:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:30,366.366.951942444:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:30,370.370.167970657:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:30,391.391.730070114:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:30,395.395.021915436:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:30,413.413.625955582:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:30,416.416.915893555:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:30,439.439.965009689:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:30,443.443.387985229:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:30,462.462.862968445:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:30,466.466.233968735:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:30,487.487.628936768:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:30,490.490.957021713:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:30,509.509.696960449:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:30,512.512.928009033:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:30,531.531.99005127:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:30,535.535.953998566:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:30,556.556.905984879:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:30,560.560.331106186:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:30,580.580.081939697:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:30,583.583.748102188:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:30,619.619.807958603:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:30,623.623.047113419:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:30,660.660.212039948:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:30,663.663.45500946:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:30,695.695.926904678:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:30,699.699.878931046:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:30,737.737.051963806:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:30,740.740.350008011:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:30,783.783.179998398:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:30,787.787.156105042:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:30,842.842.068910599:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:30,845.845.411062241:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:30,887.887.708902359:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:30,891.891.108989716:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:30,937.937.783002853:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:30,941.941.257953644:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:30,985.985.66699028:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:30,989.989.497900009:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:31,034.34.6961021423:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:31,037.37.9428863525:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:31,074.74.8119354248:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:31,077.77.9469013214:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:31,111.111.89198494:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:31,115.115.28801918:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:31,153.153.224945068:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:31,156.156.608104706:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:31,188.188.810110092:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:31,193.193.186044693:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:31,233.233.558893204:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:31,236.236.143112183:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:31,273.273.758888245:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:31,276.276.649951935:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:31,322.322.998046875:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:31,326.326.251029968:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:31,358.358.366966248:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:31,361.361.77110672:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:31,396.396.662950516:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:31,400.400.527000427:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:31,434.434.051036835:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:31,437.437.44301796:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:31,495.495.188951492:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:31,498.498.723983765:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:31,536.536.983966827:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:31,539.539.927959442:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:31,582.582.220077515:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:31,585.585.700035095:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:31,606.606.111049652:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:31,610.610.112905502:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:31,630.630.984067917:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:31,634.634.448051453:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:31,654.654.587030411:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:31,657.657.962083817:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:31,678.678.725004196:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:31,681.681.863069534:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:31,713.713.664054871:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:31,716.716.372013092:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:31,742.742.640972137:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:31,745.745.852947235:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:31,767.767.900943756:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:31,771.771.327018738:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:31,791.791.37301445:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:31,794.794.969081879:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:31,815.815.828084946:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:31,821.821.12288475:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:31,840.840.740919113:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:31,844.844.074010849:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:31,864.864.165067673:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:31,867.867.341995239:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:31,887.887.850046158:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:31,890.890.986919403:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:31,913.913.587093353:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:31,916.916.950941086:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:31,938.938.766956329:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:31,942.942.419052124:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:31,962.962.671041489:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:31,965.965.787887573:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:31,984.984.662055969:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:31,987.987.957954407:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:32,007.7.55500793457:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:32,010.10.7131004333:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:32,029.29.9229621887:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:32,033.33.595085144:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:32,053.53.0390739441:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:32,057.57.1360588074:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:32,078.78.9339542389:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:32,082.82.151889801:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:32,105.105.54599762:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:32,109.109.138965607:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:32,134.134.97209549:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:32,138.138.814926147:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:32,156.156.845092773:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:32,159.159.812927246:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:32,189.189.577102661:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:32,192.192.740917206:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:32,213.213.254928589:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:32,215.215.986013412:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:32,236.236.730098724:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:32,239.239.738941193:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:32,259.259.663105011:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:32,262.262.418031693:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:32,285.285.509109497:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:32,288.288.166046143:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:32,308.308.537960052:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:32,311.311.285018921:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:32,330.330.810070038:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:32,333.333.990097046:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:32,355.355.407953262:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:32,358.358.772039413:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:32,382.382.200956345:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:32,385.385.581016541:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:32,406.406.004905701:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:32,409.409.369945526:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:32,431.431.709051132:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:32,435.435.074090958:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:32,462.462.119102478:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:32,464.464.725971222:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:32,484.484.626054764:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:32,487.487.514972687:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:32,507.507.328033447:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:32,510.510.535001755:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:32,530.530.368089676:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:32,533.533.910989761:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:32,554.554.958105087:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:32,557.557.605028152:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:32,576.576.82299614:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:32,579.579.879045486:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:32,600.600.131988525:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:32,603.603.296995163:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:32,623.623.39091301:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:32,626.626.260995865:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:32,646.646.898984909:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:32,649.649.549007416:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:32,675.675.292015076:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:32,679.679.06498909:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:32,698.698.324918747:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:32,701.701.767921448:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:32,721.721.862077713:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:32,725.725.531101227:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:32,745.745.213031769:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:32,748.748.831987381:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:32,769.769.7930336:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:32,773.773.034095764:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:32,793.793.792009354:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:32,797.797.043085098:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:32,819.819.829940796:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:32,823.823.676109314:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:32,844.844.084978104:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:32,847.847.851991653:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:32,868.868.464946747:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:32,871.871.591091156:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:32,896.896.737098694:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:32,900.900.188922882:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:32,926.926.90205574:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:32,930.930.114984512:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:32,949.949.652910233:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:32,952.952.836036682:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:32,974.974.231004715:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:32,977.977.535963058:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:32,997.997.497081757:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:33,000.0.885963439941:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:33,024.24.5950222015:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:33,028.28.5830497742:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:33,049.49.1011142731:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:33,052.52.3159503937:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:33,074.74.9979019165:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:33,078.78.3588886261:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:33,115.115.938901901:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:33,119.119.925022125:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:33,142.142.096042633:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:33,145.145.378112793:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:33,165.165.821075439:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:33,169.169.644117355:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:33,191.191.495895386:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:33,195.195.341110229:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:33,215.215.539932251:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:33,218.218.40596199:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:33,238.238.066911697:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:33,241.241.25289917:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:33,261.261.034011841:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:33,263.263.940095901:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:33,285.285.01200676:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:33,287.287.930011749:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:33,308.308.986902237:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:33,311.311.858892441:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:33,336.336.173057556:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:33,338.338.990926743:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:33,360.360.383033752:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:33,363.363.311052322:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:33,387.387.334108353:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:33,390.390.881061554:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:33,413.413.98692131:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:33,416.416.723012924:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:33,438.438.263893127:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:33,441.441.40291214:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:33,460.460.79993248:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:33,463.463.613033295:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:33,484.484.926939011:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:33,488.488.197088242:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:33,511.511.501073837:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:33,514.514.718055725:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:33,539.539.915084839:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:33,543.543.55597496:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:33,567.567.734956741:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:33,573.573.389053345:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:33,602.602.503061295:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:33,606.606.518030167:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:33,628.628.962039948:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:33,632.632.167100906:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:33,652.652.635097504:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:33,656.656.120061874:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:33,676.676.366090775:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:33,679.679.704904556:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:34,076.76.6730308533:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:34,079.79.9169540405:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:34,115.115.906953812:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:34,118.118.879079819:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:34,160.160.192012787:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:34,163.163.490056992:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:34,191.191.772937775:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:34,195.195.204973221:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:34,217.217.709064484:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:34,220.220.541954041:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:34,244.244.349002838:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:34,247.247.467041016:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:34,266.266.277074814:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:34,269.269.649028778:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:34,288.288.629055023:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:34,291.291.699886322:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:34,313.313.949108124:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:34,316.316.390037537:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:34,335.335.578918457:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:34,338.338.325023651:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:34,360.360.887050629:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:34,363.363.419055939:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:34,384.384.919881821:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:34,388.388.222932816:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:34,411.411.341905594:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:34,415.415.040969849:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:34,439.439.465045929:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:34,443.443.456888199:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:34,466.466.141939163:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:34,469.469.455957413:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:34,489.489.401102066:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:34,492.492.620944977:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:34,514.514.204978943:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:34,517.517.975091934:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:34,542.542.853116989:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:34,546.546.292066574:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:34,571.571.130990982:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:34,576.576.132059097:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:34,596.596.68302536:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:34,600.600.19493103:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:34,620.620.625019073:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:34,625.625.161886215:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:34,646.646.817922592:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:34,650.650.300979614:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:34,669.669.974088669:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:34,675.675.528049469:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:34,695.695.51897049:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:34,699.699.461936951:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:34,718.718.769073486:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:34,724.724.791049957:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:34,748.748.393058777:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:34,751.751.893997192:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:34,774.774.324893951:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:34,777.777.676105499:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:34,798.798.037052155:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:34,801.801.405906677:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:34,821.821.38299942:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:34,824.824.841022491:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:34,848.848.669052124:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:34,851.851.974964142:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:34,871.871.392011642:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:34,875.875.161886215:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:34,896.896.157979965:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:34,899.899.015903473:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:34,918.918.675899506:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:34,922.922.542095184:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:34,943.943.783044815:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:34,947.947.289943695:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:34,971.971.306085587:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:34,975.975.59094429:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:34,996.996.737003326:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:35,000.0.49901008606:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:35,020.20.2620029449:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:35,025.25.4878997803:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:35,047.47.1799373627:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:35,050.50.5549907684:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:35,070.70.5349445343:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:35,073.73.8089084625:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:35,094.94.5200920105:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:35,097.97.9559421539:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:35,118.118.324041367:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:35,124.124.305009842:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:35,144.144.696950912:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:35,147.147.967100143:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:35,170.170.036077499:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:35,175.175.236940384:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:35,194.194.777011871:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:35,198.198.441028595:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:35,218.218.528032303:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:35,222.222.126960754:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:35,241.241.590023041:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:35,244.244.770050049:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:35,265.265.904903412:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:35,270.270.117044449:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:35,291.291.315078735:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:35,293.293.972015381:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:35,315.315.38105011:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:35,318.318.118095398:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:35,340.340.749979019:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:35,343.343.965053558:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:35,364.364.114046097:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:35,367.367.625951767:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:35,390.390.57302475:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:35,393.393.856048584:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:35,414.414.654970169:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:35,417.417.998075485:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:35,440.440.818071365:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:35,444.444.067955017:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org
+2016-01-06 13:36:35,464.464.745044708:requests.packages.urllib3.connectionpool:140735180694272:DEBUG:1337:"GET /data/2.5/weather?lat=51.5&lon=-0.12&APPID=795c1ff0b7c8af640f1f88310e296cd8 HTTP/1.1" 200 None
+2016-01-06 13:36:35,467.467.99993515:requests.packages.urllib3.connectionpool:140735180694272:INFO:1337:Starting new HTTP connection (1): api.openweathermap.org

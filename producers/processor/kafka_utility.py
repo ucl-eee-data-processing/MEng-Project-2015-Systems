@@ -1,12 +1,12 @@
 import logging
 import json
 import sys
+import time
 from kafka import SimpleProducer
 from kafka import KafkaClient
 from kafka.consumer import  SimpleConsumer
 from energy import EnergyDataset
 from weather import MetroDataset
-
 
 FORMAT = '%(asctime)s.%(msecs)s:%(name)s:%(thread)d:%(levelname)s'\
         ':%(process)d:%(message)s' 
@@ -17,8 +17,8 @@ class LazarusProducer(object):
     def __init__(self, ip_address, port='9092'):
         self.energy_topic = 'energy'
         self.weather_topic = 'weather'  
-        self.kafka = KafkaClient(ip_address + ':' + '9092')
-        self.producer = SimpleProducer(self.kafka)
+        #self.kafka = KafkaClient(ip_address + ':' + '9092')
+        #self.producer = SimpleProducer(self.kafka)
 
     def publish_energy_data(self):
         msg = self.producer.send_messages(self.energy_topic,'XX'*50)
@@ -33,10 +33,12 @@ class LazarusProducer(object):
         response = self.producer.send_messages(self.energy_topic,json.dumps(data))
         self.producer.stop()
     
-    
     def publish_weather_data(self):
-        pass
-
+        print "xxxxx"
+        metro = MetroDataset()
+        while True:
+            #time.sleep(3600)
+            print metro.publish_data()
 
 class LazarusConsumer(object):
 
@@ -50,7 +52,8 @@ class LazarusConsumer(object):
 
 if __name__ == '__main__':
     l = LazarusProducer(ip_address='10.20.30.12')
-    l.replay_energy_data()
-    c = LazarusConsumer(ip_address='10.20.30.12')
-    c.consume_message()
+    #l.replay_energy_data()
+    l.publish_weather_data()
+    #c = LazarusConsumer(ip_address='10.20.30.12')
+    #c.consume_message()
 
