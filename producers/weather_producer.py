@@ -1,9 +1,7 @@
 import logging
 import json
-import sys
 import time
 from kafka import SimpleProducer
-from kafka import KafkaClient
 from kafka.consumer import  SimpleConsumer
 from processor.weather import MetroDataset
 
@@ -21,7 +19,6 @@ class LazarusWeatherProducer(object):
     def publish_weather_data(self):
         metro = MetroDataset()
         while True:
-            print "A"*50
             # Wait for 15 minutes before sending data
             time.sleep(6)
             response = self.producer.send_messages(self.energy_topic,
@@ -29,5 +26,5 @@ class LazarusWeatherProducer(object):
         self.producer.stop()
 
 if __name__ == '__main__':
-    p = LazarusWeatherProducer(ip_address='10.20.30.12')
-    print p.publish_weather_data()
+    producer = LazarusWeatherProducer(ip_address='10.20.30.12')
+    producer.publish_weather_data()
