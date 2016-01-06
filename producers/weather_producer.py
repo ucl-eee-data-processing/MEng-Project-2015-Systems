@@ -15,16 +15,19 @@ class LazarusWeatherProducer(object):
 
     def __init__(self, ip_address, port='9092'):
         self.energy_topic = 'energy'  
-        #self.kafka = KafkaClient(ip_address + ':' + '9092')
-        #self.producer = SimpleProducer(self.kafka)
+        self.kafka = KafkaClient(ip_address + ':' + '9092')
+        self.producer = SimpleProducer(self.kafka)
 
     def publish_weather_data(self):
-        print "xxxxx"
         metro = MetroDataset()
         while True:
-            time.sleep(3600)
-            print metro.publish_data()
+            print "A"*50
+            # Wait for 15 minutes before sending data
+            time.sleep(6)
+            response = self.producer.send_messages(self.energy_topic,
+                                            json.dumps(metro.publish_data()))
+        self.producer.stop()
 
 if __name__ == '__main__':
-    p = LazarusWeatherProducer(ip_address="10.10.10.10")
+    p = LazarusWeatherProducer(ip_address='10.20.30.12')
     print p.publish_weather_data()
