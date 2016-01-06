@@ -1,12 +1,12 @@
 import os
 import wget
+import json
 import datetime
 import csv
 from time import strptime
 from calendar import monthrange
-import json
 
-PROCESSOR_DIR = os.path.abspath(os.path.dirname(__file__))
+#PROCESSOR_DIR = os.path.abspath(os.path.dirname(__file__))
 
 
 class EnergyDataset(object):
@@ -77,14 +77,14 @@ class EnergyDataset(object):
             month_data.update({date: date_data})
         return month_data
 
-    def replay(self, month, year):
+    def replay(self, WORKING_DIR, month, year):
         filename = self._generate_filename(month=month, year=year)
-        if os.path.isfile(PROCESSOR_DIR + '/' + filename):
+        if os.path.isfile(WORKING_DIR + '/' + filename):
             month_dataset = self._replay_helper(month=month, year=year)
         else:
             self._download_dataset(filename)
             month_dataset = self._replay_helper(month=month, year=year)
-        os.remove(os.path.join(PROCESSOR_DIR, filename))
+        os.remove(os.path.join(WORKING_DIR, filename))
         return month_dataset
 
     def publish_real_time_data(self):
