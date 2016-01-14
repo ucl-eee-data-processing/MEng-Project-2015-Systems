@@ -23,7 +23,6 @@ class MetroDataset(object):
         date ,time_now = date_time[0] ,date_time[1]
         time_list = time_now.split(":")
         hour ,minutes = time_list[0], time_list[1]
-        print date
         if float(minutes)/29 > 1 :
             minutes = "30"
         else:

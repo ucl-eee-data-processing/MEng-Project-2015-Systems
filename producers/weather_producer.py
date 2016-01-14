@@ -1,9 +1,11 @@
 import logging
 import json
 import time
+import datetime
 from kafka import KafkaClient
 from kafka import SimpleProducer
 from kafka.consumer import  SimpleConsumer
+from kafka.common import LeaderNotAvailableError
 from processor.weather import MetroDataset
 
 FORMAT = '%(asctime)s.%(msecs)s:%(name)s:%(thread)d:%(levelname)s'\
@@ -20,11 +22,24 @@ class WeatherProducer(object):
     def publish_weather_data(self):
         metro = MetroDataset()
         while True:
-            # Wait for 15 minutes before sending data
-            time.sleep(10)
-            response = self.producer.send_messages(self.topic,
-                                            json.dumps(metro.publish_data()))
-            print response
+            current_time = datetime.datetime.now().strftime('%d/%m/%y %H:%M')
+            date_time = current_time.split(" ")
+            time_now = date_time[1]
+            time_list = time_now.split(":")
+            minutes = time_list[1]
+            interval_flag = int(minutes)/30.0
+            if interval_flag == 0.0 or interval_flag == 1.0:
+                try:
+                    response = self.producer.send_messages(self.topic,
+                                                json.dumps(metro.publish_data()))
+                except LeaderNotAvailableError:
+                    time.sleep(1)
+                    response = self.producer.send_messages(self.topic,
+                                                json.dumps(metro.publish_data()))
+                print response
+                time.sleep(70)
+
+
         self.producer.stop()
 
 if __name__ == '__main__':
