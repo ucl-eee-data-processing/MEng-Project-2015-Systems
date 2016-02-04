@@ -1,0 +1,121 @@
+---
+# tasks file for kafka
+- name: Creating the kafka user group
+  group: gid={{ KAFKA_GID }} name={{ KAFKA_GROUP }} state=present
+  become: yes
+
+- name: Creating the user directory
+  file: path=/home/{{ KAFKA_USER }} state=directory
+  become: yes
+
+- name: Creating the kafka user
+  user:
+    uid={{ KAFKA_UID }}
+    name={{ KAFKA_USER }}
+    group={{ KAFKA_GROUP }}
+    home=/home/{{KAFKA_USER}}
+    shell=/bin/bash
+    state=present
+  become: yes
+
+- name: Download Kafka 0.8.2.2
+  get_url: >
+    url=http://apache.mirror.anlx.net/kafka/0.8.2.2/kafka_2.9.1-{{ KAFKA_VERSION}}.tgz
+    dest=/tmp/
+
+- name: Extracting to /usr/local/etc
+  shell: tar -xvzf /tmp/kafka_2.9.1-{{ KAFKA_VERSION }}.tgz chdir=/usr/local/etc creates=/usr/local/etc/kafka_2.9.1-{{ KAFKA_VERSION }}
+  become: yes
+
+- name: Update permissions
+  file: 
+    path=/usr/local/etc/kafka_2.9.1-{{ KAFKA_VERSION }}
+    owner={{ KAFKA_USER }} group={{ KAFKA_GROUP }}
+    state=directory
+    recurse=yes
+  become: yes
+
+- name: Creating link to folder
+  file: 
+    path=/usr/local/etc/kafka
+    src=/usr/local/etc/kafka_2.9.1-{{ KAFKA_VERSION }}
+    state=link
+    force=yes
+  become: yes
+
+- name: Creating the logs dir
+  file:
+    path={{ KAFKA_LOGS_DIR}}
+    owner={{ KAFKA_USER }}
+    group={{ KAFKA_GROUP }}
+    mode=0660
+    state=directory
+  become: yes
+
+- name: Remove Existing supervisord.conf
+  file: path=/etc/supervisord.conf state=absent
+  become: yes
+
+- name: Creating supervisord's script
+  template:
+    src=supervisord.conf
+    dest=/etc/supervisord.conf
+    owner=root
+    group=root
+    mode=0644
+  become: yes
+
+- name: Update Supervisor to take nice of added config files
+  shell: supervisorctl {{ item }}
+  with_items:
+  - reread
+  - update 
+  become: yes
+
+- name: Restart supervisord
+  service: name=supervisord state=restarted
+  become: yes
+
+- name: Updating the server.properties conf
+  template:
+    src=server.properties.j2
+    dest=/usr/local/etc/kafka/config/server.properties
+    owner={{ KAFKA_USER }}
+    group={{ KAFKA_GROUP}}
+    mode=0644
+  become: yes
+
+- name: Restarting Kafka
+  supervisorctl: name=kafka state=restarted
+  become: yes
+
+- name: Copying test scripts
+  file: path=/surge/test-scripts state=directory
+  become: yes
+
+- name: Copying test scripts 2
+  template:
+    src=test-consumer.sh.j2
+    dest=/surge/test-scripts/test-consumer.sh
+    owner={{ KAFKA_USER }}
+    group={{ KAFKA_GROUP }}
+    mode=0777
+  become: yes
+
+- name: Copying test scripts 3
+  template:
+    src=test-topic.sh.j2
+    dest=/surge/test-scripts/test-topic.sh
+    owner={{ KAFKA_USER }}
+    group={{ KAFKA_GROUP }}
+    mode=0777
+  become: yes
+
+- name: Copying test scripts 4
+  template:
+    src=test-producer.sh.j2
+    dest=/surge/test-scripts/test-producer.sh
+    owner={{ KAFKA_USER }}
+    group={{ KAFKA_GROUP }}
+    mode=0777
+  become: yes
