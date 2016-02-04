@@ -1,2 +1,18 @@
 ---
 # tasks file for zookeeper
+- name: Make ZK data directory
+  file: path=/var/lib/zookeeper state=directory owner=zookeeper 
+  become: yes
+#Zookeeper 3.4.5
+- name: Install Zookeeper Server
+  yum: name=zookeeper-server state=present
+  become: yes
+
+- name: Initialize Zookeeper Server
+  shell: service zookeeper-server init
+  become: yes
+
+- name: Start Zookeeper
+  service: name=zookeeper-server state=restarted
+  become: yes
+

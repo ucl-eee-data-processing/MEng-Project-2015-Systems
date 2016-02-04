@@ -1,2 +1,34 @@
 ---
 # tasks file for base
+
+- name: Install the 'Development tools' package group
+  yum: name="@Development tools" state=present
+  become: yes
+
+- name: Install Base Packages
+  yum: name={{ item }} state=present
+  with_items:
+  - wget
+  - java-1.7.0-openjdk
+  become: yes
+
+- name: Install EPEL 6
+  yum: >
+    name=http://download.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
+    state=present
+    disable_gpg_check=yes
+  ignore_errors: yes
+  become: yes
+
+- name: Download Cloudera CDH 5.2.x
+  yum: >
+    name=https://archive.cloudera.com/cdh5/one-click-install/redhat/6/x86_64/cloudera-cdh-5-0.x86_64.rpm
+    state=present
+    disable_gpg_check=yes
+  ignore_errors: yes
+  become: yes
+
+
+
+
+
