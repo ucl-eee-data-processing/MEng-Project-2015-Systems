@@ -1,0 +1,51 @@
+---
+# tasks file for hadoop
+- name: Import Hadoop GPG key
+  rpm_key:
+    state=present
+    key=https://dist.apache.org/repos/dist/release/hadoop/common/KEYS
+  become: yes
+
+- name: Create hadoop group
+  group: name={{ HADOOP_GROUP }}
+  become: yes
+
+- name: Create hadoop user
+  user:
+    name={{ HADOOP_USER }}
+    group={{ HADOOP_GROUP }}
+    home={{ HADOOP_HOME }}
+    shell=/bin/bash
+  become: yes
+
+- name: Generate SSH keys for Hadoop User
+  user: name=hadoop generate_ssh_key=yes ssh_key_bits=2048
+  become: yes
+
+- name: Create authorized_users file
+  shell: cat {{HADOOP_HOME}}/.ssh/id_rsa.pub >> {{HADOOP_HOME}}/.ssh/authorized_keys
+  become: yes
+
+- name: Change the Permissions on the file
+  file: path={{HADOOP_HOME}}/.ssh/authorized_keys mode=0600 owner=hadoop
+  become: yes
+
+- name: Change Permissions on Hadoop Dir
+  file: path={{HADOOP_HOME}} owner=hadoop group=hadoop
+  become: yes
+
+- name: Download Hadoop
+  get_url:
+    url=http://apache.mirror.anlx.net/hadoop/common/hadoop-{{HADOOP_VERSION}}/hadoop-{{HADOOP_VERSION}}.tar.gz
+    dest={{HADOOP_HOME}}
+  become_user: hadoop
+
+- name: unzip
+  shell: tar xzf {{HADOOP_HOME}}/hadoop-{{ HADOOP_VERSION}}.tar.gz
+  become_user: hadoop
+  become: yes
+
+- name: Change Hadoop Home dir name
+  shell: mv hadoop-{{ HADOOP_VERSION}} hadoop
+  become_user: hadoop
+  become: yes

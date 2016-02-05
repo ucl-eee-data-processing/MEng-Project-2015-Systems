@@ -1,0 +1,7 @@
+---
+# defaults file for hadoop
+HADOOP_VERSION: 2.7.1
+HADOOP_USER: hadoop
+HADOOP_GROUP: hadoop
+HADOOP_HOME: /home/hadoop
+

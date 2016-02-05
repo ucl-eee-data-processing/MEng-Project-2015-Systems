@@ -1,6 +1,5 @@
 ---
 - hosts: all
-  roles: 
-    #- role: base
-    #- role: zookeeper
-    - role: kafka
+  roles:
+  #- role: base
+  - role: hadoop
