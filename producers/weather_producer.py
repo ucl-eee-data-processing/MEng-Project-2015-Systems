@@ -52,19 +52,18 @@ class WeatherProducer(object):
                 time_now = date_time[1]
                 time_list = time_now.split(":")
                 minutes = time_list[1]
-                interval_flag = int(minutes)/30.0
-                metro_data = metro.publish_data()      
-                #if interval_flag == 0.0 or interval_flag == 1.0:
-                if data.has_key(metro_data['date']):
-                    if not data[metro_data['date']].has_key(metro_data['time']):
-                        data[metro_data['date']].update({metro_data['time']: metro_data['data']})
-                else:
-                    data[metro_data['date']] = {metro_data['time']: metro_data['data']}
+                interval_flag = int(minutes)/30.0     
+                if interval_flag == 0.0 or interval_flag == 1.0:
+                    metro_data = metro.publish_data() 
+                    if data.has_key(metro_data['date']):
+                        if not data[metro_data['date']].has_key(metro_data['time']):
+                            data[metro_data['date']].update({metro_data['time']: metro_data['data']})
+                    else:
+                        data[metro_data['date']] = {metro_data['time']: metro_data['data']}
                 print data
             except KeyboardInterrupt:
                 with open('data.json', 'w') as outfile:
                     json.dump(data, outfile)
-
                 sys.exit()
 
 
