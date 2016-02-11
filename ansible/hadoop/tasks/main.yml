@@ -1,1 +1,35 @@
 ---
+- name: Remove Existing bash profile
+  file: path=/home/hadoop/.bashrc state=absent
+  become_user: hadoop
+  become: yes
+
+- name: Copy New Bash profile
+  copy: src=.bashrc dest=/home/hadoop/.bashrc owner=hadoop mode=0644
+  become_user: hadoop
+  become: yes
+
+- name: Source Hadoop Bash profile
+  shell: source /home/hadoop/.bashrc
+  become_user: hadoop
+  become: yes
+
+- name: Remove Default Hadoop config file
+  file: path=/home/hadoop/hadoop/etc/hadoop/{{ item }} state=absent
+  with_items:
+  - core-site.xml
+  - hdfs-site.xml
+  - mapred-site.xml
+  - yarn-site.xml
+  become_user: hadoop
+  become: yes
+
+- name: Replace default config files
+  copy: src={{ item }} dest=/home/hadoop/hadoop/etc/hadoop/{{ item }} owner=hadoop mode=0664
+  with_items:
+  - core-site.xml
+  - hdfs-site.xml
+  - mapred-site.xml
+  - yarn-site.xml
+  become_user: hadoop
+  become: yes
