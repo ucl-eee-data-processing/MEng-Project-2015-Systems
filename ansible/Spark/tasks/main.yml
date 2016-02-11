@@ -1,2 +1,12 @@
 ---
 # tasks file for spark
+
+- name: Create Spark Directory
+  file: path={{SPARK_HOME}} state=directory
+  become: yes
+
+- name: Download Spark
+   get_url:
+     url=http://apache.mirror.anlx.net/spark/spark-{{SPARK_VERSION}}/spark-{{SPARK_VERSION}}-bin-hadoop2.6.tgz
+     dest={{SPARK_HOME}}
+   become: yes

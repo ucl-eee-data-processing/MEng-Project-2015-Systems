@@ -29,7 +29,13 @@
   ignore_errors: yes
   become: yes
 
+- name: Install Maven RPM
+  shell: wget http://repos.fedorapeople.org/repos/dchen/apache-maven/epel-apache-maven.repo -O /etc/yum.repos.d/epel-apache-maven.repo
+  become: yes
 
+- name: Install Maven
+  yum: name=apache-maven state=present
+  become: yes
 
 
 
