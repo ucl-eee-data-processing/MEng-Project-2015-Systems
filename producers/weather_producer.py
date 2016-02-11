@@ -61,7 +61,7 @@ class WeatherProducer(object):
                     else:
                         data[metro_data['date']] = {metro_data['time']: metro_data['data']}
                 print data
-            except KeyboardInterrupt:
+            except:
                 with open('data.json', 'w') as outfile:
                     json.dump(data, outfile)
                 sys.exit()
