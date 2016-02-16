@@ -17,8 +17,8 @@ class WeatherProducer(object):
 
     def __init__(self, ip_address, topic='weather', port='9092'):
         self.topic = topic  
-        #self.kafka = KafkaClient(ip_address + ':' + '9092')
-        #self.producer = SimpleProducer(self.kafka)
+        self.kafka = KafkaClient(ip_address + ':' + '9092')
+        self.producer = SimpleProducer(self.kafka)
 
     def publish_weather_data(self):
         metro = MetroDataset()
@@ -68,5 +68,5 @@ class WeatherProducer(object):
 
 
 if __name__ == '__main__':
-    producer = WeatherProducer(ip_address='10.20.30.12')
-    producer.publish_to_file()
+    producer = WeatherProducer(ip_address='192.168.33.30')
+    producer.publish_weather_data()
