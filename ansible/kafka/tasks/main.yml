@@ -1,15 +1,77 @@
 ---
-# tasks file for kafka
-- name: Download Kafka 0.8.2.2
-  get_url: >
-    url=http://www.eu.apache.org/dist/kafka/0.8.2.2/kafka_2.9.1-{{ KAFKA_VERSION }}.tgz
-    dest=/var/
+- name: "Install JDK 1.7"
+  yum: name=java-1.7.0-openjdk-devel state=present
   become: yes
 
-- name: zip
-  unarchive: src=/var/kafka_2.9.1-{{ KAFKA_VERSION }}.tgz dest=/var/ copy=no
+- name: add group "kafka"
+  group: name={{ kafka_group }} system=yes
   become: yes
 
-- name: Rename Unzipped Kafka folder
-  shell: mv /var/kafka_2.9.1-{{ KAFKA_VERSION }} /var/kafka
+- name: add user "kafka"
+  user: name={{ kafka_group }} group={{ kafka_group }} shell=/sbin/nologin system=yes
+  become: yes
+
+- name: "Download the tarball"
+  get_url: url="http://{{ apache_mirror }}/kafka/{{ kafka_version }}/kafka_2.9.2-{{ kafka_version }}.tgz" dest=/opt/kafka_2.9.2-{{ kafka_version }}.tgz
+  become: yes
+
+- name: Extract archive
+  unarchive: src=/opt/kafka_2.9.2-{{ kafka_version }}.tgz dest=/opt/ copy=no creates=/opt/kafka_2.9.2-{{ kafka_version }}
+  become: yes
+
+- name: Symlink install directory
+  file: src=/opt/kafka_2.9.2-{{ kafka_version }} path=/opt/kafka state=link
+  become: yes
+
+- name: Set permissions to Kafka folder
+  file: path=/opt/kafka/ owner=root group=root recurse=yes
+  become: yes
+
+- name: Create Kafka data directory
+  file: path="/disk{{ item.0 + 1 }}/kafka/data" state=directory owner={{ kafka_user }} group={{ kafka_group }}
+  with_indexed_items: data_disks_devices
+  when: data_disks_devices is defined and data_disks_devices and data_disks_devices|length > 1
+
+- name: Create Kafka data directory
+  file: path=/kafka/data state=directory owner={{ kafka_user }} group={{ kafka_group }}
+  when: data_disks_devices is not defined or not data_disks_devices or data_disks_devices|length <= 1
+  become: yes
+
+- name: Create Kafka log directory
+  file: path={{ kafka_log_dir }} state=directory owner={{ kafka_user }} group={{ kafka_group }}
+  become: yes
+
+- name: Link the log directory
+  file: src={{ kafka_log_dir }} path=/opt/kafka/logs state=link
+  become: yes
+
+- name: Create Kafka conf directory
+  file: path={{ kafka_conf_dir }} state=directory owner=root group=root mode=755
+  become: yes
+
+- name: Generate Random ID
+  shell: echo $RANDOM
+  register: broker
+
+- name: Configure Kafka server
+  template: src=server.properties.j2 dest="{{kafka_conf_dir}}/server.properties"
+  become: yes
+
+- name: Upload log4j configs
+  copy: src={{ item }} dest="{{ kafka_conf_dir }}/" owner=root group=root mode=644
+  with_items:
+    - log4j.properties
+    - tools-log4j.properties
+  become: yes
+
+- name: Install Kafka init script
+  template: src=kafka-server.j2 dest=/etc/init.d/kafka-server mode=0755
+  become: yes
+
+- name: Enable and start Kafka service
+  service: name=kafka-server enabled=yes state=restarted
+  become: yes
+
+- name: Add Kafka binaries to PATH
+  copy: src=kafka.sh dest=/etc/profile.d/ owner=root group=root mode=644
   become: yes

@@ -32,5 +32,5 @@ class EnergyProducer(object):
         self.producer.stop()
 
 if __name__ == '__main__':
-    producer = EnergyProducer(ip_address='10.20.30.12')
+    producer = EnergyProducer(ip_address='192.168.33.30')
     producer.replay_energy_data()

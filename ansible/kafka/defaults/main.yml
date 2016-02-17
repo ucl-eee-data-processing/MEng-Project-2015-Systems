@@ -1,11 +1,7 @@
 ---
-# defaults file for kafka
-KAFKA_VERSION: 0.8.2.2
-KAFKA_USER: kafka
-KAFKA_GROUP: kafka
-KAFKA_UID: 51521
-KAFKA_GID: 51521
-KAFKA_LOGS_DIR: /var/log/kafka
-KAFKA_PORT: 9092
-KAFKA_INTERFACE: eth1
-ZOOKEEPER_SERVER: 127.0.0.1
+apache_mirror: apache.mirror.anlx.net
+kafka_version: 0.8.2.2
+kafka_user: kafka
+kafka_group: kafka
+kafka_conf_dir: /etc/kafka/config
+kafka_log_dir: /var/log/kafka
