@@ -1,12 +1,15 @@
 ---
 - name: "Install JDK 1.7"
   yum: name=java-1.7.0-openjdk-devel state=present
+  become: yes
 
 - name: add group "zookeeper"
   group: name={{ zookeeper_group }} system=yes
+  become: yes
 
 - name: add user "zookeeper"
   user: name={{ zookeeper_group }} group={{ zookeeper_group }} home={{ zookeeper_data_dir }} shell=/sbin/nologin system=yes
+  become: yes
 
 - name: "Download the tarball"
   get_url: url=http://{{ apache_mirror }}/zookeeper/stable/zookeeper-{{ zookeeper_version }}.tar.gz dest=/opt/zookeeper-{{ zookeeper_version }}.tar.gz

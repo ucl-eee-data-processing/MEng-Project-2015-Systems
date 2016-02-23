@@ -4,4 +4,5 @@ HADOOP_VERSION: 2.7.1
 HADOOP_USER: hadoop
 HADOOP_GROUP: hadoop
 HADOOP_HOME: /home/hadoop
+HADOOP_HOST: 0.0.0.0
 
