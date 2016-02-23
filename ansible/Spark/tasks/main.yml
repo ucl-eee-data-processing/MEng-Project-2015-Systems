@@ -3,10 +3,38 @@
 
 - name: Create Spark Directory
   file: path={{SPARK_HOME}} state=directory
+  become_user: hadoop
   become: yes
 
 - name: Download Spark
-   get_url:
-     url=http://apache.mirror.anlx.net/spark/spark-{{SPARK_VERSION}}/spark-{{SPARK_VERSION}}-bin-hadoop2.6.tgz
-     dest={{SPARK_HOME}}
-   become: yes
+  get_url:
+    url=http://apache.mirror.anlx.net/spark/spark-{{SPARK_VERSION}}/spark-{{SPARK_VERSION}}-bin-hadoop2.6.tgz
+    dest={{SPARK_HOME}}
+  become_user: hadoop
+  become: yes
+
+- name: Remove Existing Bash Profile file
+  file: path=/home/hadoop/.bash_profile state=absent
+  become:
+
+- name: Update the new bash profile
+  copy: src=.bash_profile dest=/home/hadoop/.bash_profile owner=hadoop mode=0644
+  become_user: hadoop
+  become: yes
+
+- name: Update Spark ENV
+  copy: src=spark-env.sh dest={{ SPARK_HOME}}/spark/conf/spark-env.sh owner=hadoop mode=0755
+  become_user: hadoop
+  become: yes
+
+- name: Execute Spark Env
+  shell: ./spark-env.sh
+  args:
+    chdir: {{ SPARK_HOME}}/spark/conf/
+  become_user: hadoop
+  become: yes
+
+- name: Start Spark Master
+  shell: /home/hadoop/spark/sbin/start-master.sh
+  become_user: hadoop
+  become: yes
