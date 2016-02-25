@@ -13,6 +13,16 @@
   become_user: hadoop
   become: yes
 
+- name: Unarchive Spark
+  unarchive: src={{SPARK_HOME}}/spark-{{ SPARK_VERSION}}-bin-hadoop2.6.tgz dest={{ SPARK_HOME}} copy=no
+  become_user: hadoop
+  become: yes
+
+- name: Change Hadoop Home dir name
+  shell: mv spark-{{ SPARK_VERSION }}-bin-hadoop2.6 spark
+  become_user: hadoop
+  become: yes
+
 - name: Remove Existing Bash Profile file
   file: path=/home/hadoop/.bash_profile state=absent
   become:
@@ -27,14 +37,34 @@
   become_user: hadoop
   become: yes
 
-- name: Execute Spark Env
-  shell: ./spark-env.sh
-  args:
-    chdir: {{ SPARK_HOME}}/spark/conf/
+- name: Start Spark Master
+  shell: /home/hadoop/spark/sbin/start-master.sh
   become_user: hadoop
   become: yes
 
-- name: Start Spark Master
-  shell: /home/hadoop/spark/sbin/start-master.sh
+- name: Copy Spark jars
+  file: path={{ SPARK_HOME}}/jars state=directory
+  become_user: hadoop
+  become: yes
+
+- name: Copy Spark Jars to Jar Directory
+  shell: cp {{ SPARK_HOME}}/spark/lib/* {{ SPARK_HOME}}/jars/
+  become_user: hadoop
+  become: yes
+
+- name: Download Kafka
+  get_url:
+    url=http://www.mirrorservice.org/sites/ftp.apache.org/kafka/0.8.2.2/kafka_2.9.1-0.8.2.2.tgz
+    dest={{SPARK_HOME}}
+  become_user: hadoop
+  become: yes
+
+- name: Unarchive Kafka
+  unarchive: src={{SPARK_HOME}}/kafka_2.9.1-0.8.2.2.tgz dest={{ SPARK_HOME}} copy=no
+  become_user: hadoop
+  become: yes
+
+- name: jars
+  shell: cp {{ SPARK_HOME}}/kafka_2.9.1-0.8.2.2/libs/* {{ SPARK_HOME}}/jars/
   become_user: hadoop
   become: yes

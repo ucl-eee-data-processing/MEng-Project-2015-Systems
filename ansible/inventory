@@ -1,9 +1,3 @@
-#vm1-zk-kafka ansible_host=127.0.0.1 ansible_port=2222 ansible_user=vagrant ansible_ssh_pass=vagrant
-vm2-hadoop ansible_host=127.0.0.1 ansible_port=2222 ansible_user=vagrant ansible_ssh_pass=vagrant
-
-#[mgnt]
-#vm1-zk-kafka
-
-#[hd_hadoop]
-#vm2-zk-hadoop
+#vm-kafka ansible_host=127.0.0.1 ansible_port=2222 ansible_user=vagrant ansible_ssh_pass=vagrant
+vm-hadoop ansible_host=127.0.0.1 ansible_port=2200 ansible_user=vagrant ansible_ssh_pass=vagrant
 

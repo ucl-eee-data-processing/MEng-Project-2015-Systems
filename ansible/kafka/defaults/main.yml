@@ -5,3 +5,4 @@ kafka_user: kafka
 kafka_group: kafka
 kafka_conf_dir: /etc/kafka/config
 kafka_log_dir: /var/log/kafka
+SERVER_IP: 192.168.33.10

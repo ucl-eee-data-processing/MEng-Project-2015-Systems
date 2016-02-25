@@ -39,6 +39,7 @@
     url=http://apache.mirror.anlx.net/hadoop/common/hadoop-{{HADOOP_VERSION}}/hadoop-{{HADOOP_VERSION}}.tar.gz
     dest={{HADOOP_HOME}}
   become_user: hadoop
+  become: yes
 
 - name: unzip
   shell: tar xzf {{HADOOP_HOME}}/hadoop-{{ HADOOP_VERSION}}.tar.gz
