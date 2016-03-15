@@ -17,7 +17,7 @@ class MetroDataset(object):
         #self.geolocator = Nominatim()
         #self.location = self.geolocator.geocode(address)
 
-    def _current_time(self):
+    def current_time(self):
         current_time = datetime.datetime.now().strftime('%d/%m/%y %H:%M')
         date_time = current_time.split(" ")
         date ,time_now = date_time[0] ,date_time[1]
@@ -41,11 +41,9 @@ class MetroDataset(object):
             return None
 
     def publish_data(self):
-        timestamp = self._current_time()
+        timestamp = self.current_time()
         if timestamp != None:
-            return {'date': timestamp[0],
-                    'time': timestamp[1],
-                    'data':self._current_data()}
+            return self._current_data()['main']
         else:
             return None
 

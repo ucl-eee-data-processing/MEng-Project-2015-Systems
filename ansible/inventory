@@ -1,3 +1,2 @@
-#vm-kafka ansible_host=127.0.0.1 ansible_port=2222 ansible_user=vagrant ansible_ssh_pass=vagrant
-vm-hadoop ansible_host=127.0.0.1 ansible_port=2200 ansible_user=vagrant ansible_ssh_pass=vagrant
+rodrig-2 ansible_host=rodrig-2.ee.ucl.ac.uk ansible_user=zceeh63 ansible_ssh_pass=zceeh63 ansible_sudo_pass=zceeh63
 

@@ -13,7 +13,7 @@
   with_items:
   - wget
   - java-1.7.0-openjdk
-  - supervisor
+  #- supervisor
   become: yes
 
 - name: Install EPEL 6

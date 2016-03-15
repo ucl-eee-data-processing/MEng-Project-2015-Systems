@@ -11,9 +11,9 @@
   user: name={{ kafka_group }} group={{ kafka_group }} shell=/sbin/nologin system=yes
   become: yes
 
-- name: "Download the tarball"
-  get_url: url="http://{{ apache_mirror }}/kafka/{{ kafka_version }}/kafka_2.9.2-{{ kafka_version }}.tgz" dest=/opt/kafka_2.9.2-{{ kafka_version }}.tgz
-  become: yes
+#- name: "Download the tarball"
+#  get_url: url="http://{{ apache_mirror }}/kafka/{{ kafka_version }}/kafka_2.9.2-{{ kafka_version }}.tgz" dest=/opt/kafka_2.9.2-{{ kafka_version }}.tgz
+#  become: yes
 
 - name: Extract archive
   unarchive: src=/opt/kafka_2.9.2-{{ kafka_version }}.tgz dest=/opt/ copy=no creates=/opt/kafka_2.9.2-{{ kafka_version }}

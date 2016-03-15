@@ -1,18 +1,19 @@
 import os
-import wget
+import urllib
 import json
 import datetime
 import csv
 from time import strptime
 from calendar import monthrange
+from calendar import month_abbr
 
-#PROCESSOR_DIR = os.path.abspath(os.path.dirname(__file__))
+WORKING_DIR = os.getcwd()
 
 
 class EnergyDataset(object):
 
     def __init__(self, offset=None, year=None, month=None):
-        self.base_url = 'http://www.ecodriver.uk.com/eCMS/Files/DFT/'
+        self.base_url = 'http://webview.ecodriver.net/eCMS/Files/DFT/'
 
     def _generate_filename(self, month=None, year=None):
         if month == None and year == None:
@@ -26,7 +27,7 @@ class EnergyDataset(object):
 
     def _current_dataset_month(self):
         dataset = ''
-        for file in os.listdir(PROCESSOR_DIR):
+        for file in os.listdir(WORKING_DIR):
             if file.endswith(".csv"):
                 dataset = file
         try:
@@ -47,9 +48,46 @@ class EnergyDataset(object):
             data_points.update({data['Meter']: data[time]})
         return data_points
 
+
     def _download_dataset(self, filename):
         link_address = self.base_url + filename
-        wget.download(link_address)
+        response = urllib.urlretrieve(link_address, filename)
+
+    def energy_consumption(self,date=None):
+        time_now = datetime.datetime.now().strftime('%d/%m/%y %H:%M')
+        date_time = time_now.split(" ")
+        date ,curr_time = date_time[0] ,date_time[1]
+        month = date.split("/")[1]
+        year = '20' + date.split("/")[2]
+        prev_year = '20' + str(int(date.split("/")[2]) - 1)
+        prev_date = date.split("/")[0] + '/' + date.split("/")[1] + '/' + prev_year
+        if month[0] == '0':
+           month = month_abbr[int(month[1])].lower()
+        else:
+            month = month_abbr[int(month)].lower()
+        time_list = curr_time.split(":")
+        if int(time_list[1]) < 30 :
+            minutes = '00'
+        else:
+            minutes = '30'
+        time_stamp = time_list[0] + ':' + minutes
+        curr_file = self._generate_filename(month=month,year=year)
+        prev_file = self._generate_filename(month=month,year=prev_year)
+        if os.path.isfile(WORKING_DIR + '/' + curr_file) or os.path.isfile(WORKING_DIR + '/' + prev_file) :
+            if os.path.isfile(WORKING_DIR + '/' + curr_file):
+                return self._get_datapoint(curr_file,date,time_stamp)
+            else:
+                return self._get_datapoint(prev_file,prev_date,time_stamp)
+        else:
+            link_address = self.base_url + curr_file
+            response = urllib.urlopen(link_address)
+            if response.getcode() == 404 :
+                self._download_dataset(prev_file)
+                return self._get_datapoint(prev_file,prev_date,time_stamp)
+            else:
+                self._download_dataset(curr_file)
+                return self._get_datapoint(curr_file,date,time_stamp)
+
 
     def _replay_helper(self, month, year):
         filename = self._generate_filename(month=month, year=year)
@@ -87,27 +125,11 @@ class EnergyDataset(object):
         os.remove(os.path.join(WORKING_DIR, filename))
         return month_dataset
 
-    def publish_real_time_data(self):
-        time = datetime.datetime.now().strftime('%d/%m/%y %H:%M')
-        date_time = time.split(" ")
-        date ,time_today = date_time[0] ,date_time[1]
-        if self._current_dataset_month() == int(date.split("/")[1]):
-            time_list = time_today.split(":")
-            hour ,minutes = time_list[0], time_list[1]
-            if int(minutes) < 31:
-                #self._generate_filename() 
-                datapoint = self._get_datapoint('deptfortransport_dec-2015.csv' ,'26/11/2015', hour + ':00')
-                print datapoint
-            else:
-                datapoint = self._get_datapoint('deptfortransport_dec-2015.csv' , '26/11/2015', hour + ':30')
-                print datapoint
-        else:
-            pass 
-            # Remove the old one and download the lastest one
-            # There is no current data 
-
 if __name__ == '__main__':
     dataset = EnergyDataset()
-    print dataset.replay('jan',2015)
+    filename = dataset._generate_filename(month='mar',year='2015')
+    #dataset._download_dataset(filename)
+    #print dataset._get_datapoint(filename,'01/03/2015', '00:00')
+    print dataset.energy_consumption()
 
 

@@ -6,12 +6,12 @@
   become_user: hadoop
   become: yes
 
-- name: Download Spark
-  get_url:
-    url=http://apache.mirror.anlx.net/spark/spark-{{SPARK_VERSION}}/spark-{{SPARK_VERSION}}-bin-hadoop2.6.tgz
-    dest={{SPARK_HOME}}
-  become_user: hadoop
-  become: yes
+#- name: Download Spark
+#  get_url:
+#    url=http://apache.mirror.anlx.net/spark/spark-{{SPARK_VERSION}}/spark-{{SPARK_VERSION}}-bin-hadoop2.6.tgz
+#    dest={{SPARK_HOME}}
+#  become_user: hadoop
+#  become: yes
 
 - name: Unarchive Spark
   unarchive: src={{SPARK_HOME}}/spark-{{ SPARK_VERSION}}-bin-hadoop2.6.tgz dest={{ SPARK_HOME}} copy=no
@@ -52,12 +52,12 @@
   become_user: hadoop
   become: yes
 
-- name: Download Kafka
-  get_url:
-    url=http://www.mirrorservice.org/sites/ftp.apache.org/kafka/0.8.2.2/kafka_2.9.1-0.8.2.2.tgz
-    dest={{SPARK_HOME}}
-  become_user: hadoop
-  become: yes
+#- name: Download Kafka
+#  get_url:
+#    url=http://www.mirrorservice.org/sites/ftp.apache.org/kafka/0.8.2.2/kafka_2.9.1-0.8.2.2.tgz
+#    dest={{SPARK_HOME}}
+#  become_user: hadoop
+#  become: yes
 
 - name: Unarchive Kafka
   unarchive: src={{SPARK_HOME}}/kafka_2.9.1-0.8.2.2.tgz dest={{ SPARK_HOME}} copy=no

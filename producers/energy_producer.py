@@ -12,7 +12,7 @@ PRODUCER_DIR = os.path.abspath(os.path.dirname(__file__))
 
 FORMAT = '%(asctime)s.%(msecs)s:%(name)s:%(thread)d:%(levelname)s'\
         ':%(process)d:%(message)s' 
-logging.basicConfig(filename='logs/energy.log',format=FORMAT, level=logging.DEBUG)
+logging.basicConfig(filename='logs/producer.log',format=FORMAT, level=logging.DEBUG)
 
 class EnergyProducer(object):
 
