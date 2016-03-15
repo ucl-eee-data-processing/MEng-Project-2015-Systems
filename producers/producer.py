@@ -36,7 +36,7 @@ class LazarusProducer(Thread):
 
     def run(self):
         while True:
-            time.sleep(10)
+            time.sleep(30*60)
             self._produce()
 
 if __name__ == '__main__':
