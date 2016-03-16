@@ -13,7 +13,7 @@
  * License.
  */
 
-package com.cloudera.oryx.example.serving;
+package com.cloudera.oryx.lazarus.serving;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;

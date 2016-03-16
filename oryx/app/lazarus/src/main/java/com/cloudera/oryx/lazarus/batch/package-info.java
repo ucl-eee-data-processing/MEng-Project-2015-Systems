@@ -17,4 +17,4 @@
  * Contains a minimal example of what a user application would create to implement a
  * Batch Layer.
  */
-package com.cloudera.oryx.example.batch;
+package com.cloudera.oryx.lazarus.batch;

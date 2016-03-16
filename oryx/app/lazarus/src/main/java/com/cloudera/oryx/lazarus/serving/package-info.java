@@ -17,4 +17,4 @@
  * Contains a minimal example of what a user application would create to implement a
  * Serving Layer.
  */
-package com.cloudera.oryx.example.serving;
+package com.cloudera.oryx.lazarus.serving;

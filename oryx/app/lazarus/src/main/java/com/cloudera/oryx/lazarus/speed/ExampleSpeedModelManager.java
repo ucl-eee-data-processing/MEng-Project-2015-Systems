@@ -13,7 +13,7 @@
  * License.
  */
 
-package com.cloudera.oryx.example.speed;
+package com.cloudera.oryx.lazarus.speed;
 
 import java.io.IOException;
 import java.util.ArrayList;

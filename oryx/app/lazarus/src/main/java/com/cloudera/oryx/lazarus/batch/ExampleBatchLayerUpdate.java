@@ -13,7 +13,7 @@
  * License.
  */
 
-package com.cloudera.oryx.example.batch;
+package com.cloudera.oryx.lazarus.batch;
 
 import java.io.IOException;
 import java.util.ArrayList;
