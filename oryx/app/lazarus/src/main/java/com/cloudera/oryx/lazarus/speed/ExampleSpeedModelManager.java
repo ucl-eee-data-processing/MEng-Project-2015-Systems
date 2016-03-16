@@ -29,7 +29,7 @@ import org.apache.spark.api.java.JavaPairRDD;
 
 import com.cloudera.oryx.api.KeyMessage;
 import com.cloudera.oryx.api.speed.SpeedModelManager;
-import com.cloudera.oryx.example.batch.ExampleBatchLayerUpdate;
+import com.cloudera.oryx.lazarus.batch.ExampleBatchLayerUpdate;
 
 /**
  * Also counts and emits counts of number of distinct words that occur with words.
