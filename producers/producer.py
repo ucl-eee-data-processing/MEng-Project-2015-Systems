@@ -11,14 +11,14 @@ from processor.weather import MetroDataset
 from processor.energy import EnergyDataset
 
 
-FORMAT = '%(asctime)s.%(msecs)s:%(name)s:%(thread)d:%(levelname)s'\
-        ':%(process)d:%(message)s'
+#FORMAT = '%(asctime)s.%(msecs)s:%(name)s:%(thread)d:%(levelname)s'\
+#        ':%(process)d:%(message)s'
 
-logging.basicConfig(filename='logs/energy.log',format=FORMAT, level=logging.DEBUG)
+#logging.basicConfig(filename='logs/energy.log',format=FORMAT, level=logging.DEBUG)
 
 class LazarusProducer(Thread):
 
-    def __init__(self, ip_address, topic='OryxTest', port='9092'):
+    def __init__(self, ip_address, topic='OryxInput', port='9092'):
         super(LazarusProducer, self).__init__()
         self.topic = topic  
         self.kafka = KafkaClient(ip_address + ':' + '9092')
@@ -33,6 +33,7 @@ class LazarusProducer(Thread):
                  'energy': self.energy.energy_consumption(),
                  'weather': self.weather.publish_data()} 
         response = self.producer.send_messages(self.topic,json.dumps(data))
+	print response
 
     def run(self):
         while True:
@@ -40,7 +41,7 @@ class LazarusProducer(Thread):
             self._produce()
 
 if __name__ == '__main__':
-    timer = LazarusProducer(ip_address='192.168.33.30')
+    timer = LazarusProducer(ip_address='rodrig-1.ee.ucl.ac.uk')
     timer.start()
     #timer._produce()
     
