@@ -18,7 +18,7 @@ from processor.energy import EnergyDataset
 
 class LazarusProducer(Thread):
 
-    def __init__(self, ip_address, topic='OryxTest', port='9092'):
+    def __init__(self, ip_address, topic='OryxInput', port='9092'):
         super(LazarusProducer, self).__init__()
         self.topic = topic  
         self.kafka = KafkaClient(ip_address + ':' + '9092')
@@ -37,7 +37,7 @@ class LazarusProducer(Thread):
 
     def run(self):
         while True:
-            time.sleep(3)
+            time.sleep(30*60)
             self._produce()
 
 if __name__ == '__main__':
