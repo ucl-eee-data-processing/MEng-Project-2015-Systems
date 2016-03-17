@@ -42,6 +42,7 @@ public final class Distinct extends OryxResource {
   @Path("{word}")
   public int get(@PathParam("word") String word) {
     Integer count = getModel().getWords().get(word);
+    System.out.println("Hellooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo");
     return count == null ? 0 : count;
   }
 
