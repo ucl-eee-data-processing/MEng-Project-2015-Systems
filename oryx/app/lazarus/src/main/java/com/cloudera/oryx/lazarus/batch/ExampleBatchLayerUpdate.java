@@ -52,10 +52,21 @@ public final class ExampleBatchLayerUpdate implements BatchLayerUpdate<String,St
     JavaPairRDD<String,String> allData = pastData == null ? newData : newData.union(pastData);
     String modelString;
     try {
+     System.out.println("Print New Data ...................................");
+     System.out.println(newData);
+     System.out.println("Printing All Data .................................");
+     System.out.println(allData);
       modelString = new ObjectMapper().writeValueAsString(countDistinctOtherWords(allData));
     } catch (JsonProcessingException jpe) {
       throw new IOException(jpe);
     }
+    System.out.println("Updating the Model Biatch !!!!!!!!!!!!!!!!!!!!!!!!!!!");
+    System.out.println("Updating the Model Biatch !!!!!!!!!!!!!!!!!!!!!!!!!!!");
+    System.out.println("Updating the Model Biatch !!!!!!!!!!!!!!!!!!!!!!!!!!!");
+    System.out.println("Updating the Model Biatch !!!!!!!!!!!!!!!!!!!!!!!!!!!");
+    System.out.println("Updating the Model Biatch !!!!!!!!!!!!!!!!!!!!!!!!!!!");
+    
+    
     modelUpdateTopic.send("MODEL", modelString);
   }
 
