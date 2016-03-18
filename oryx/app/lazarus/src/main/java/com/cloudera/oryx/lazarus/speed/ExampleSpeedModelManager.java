@@ -71,7 +71,14 @@ public final class ExampleSpeedModelManager implements SpeedModelManager<String,
   @Override
   public Iterable<String> buildUpdates(JavaPairRDD<String,String> newData) {
     List<String> updates = new ArrayList<>();
-    System.out.println("Consuming Input Data ..........................................................................................");
+    System.out.println("Consuming Input Data ...............................");
+    System.out.println("Consuming Input Data ...............................");
+    System.out.println("Consuming Input Data ...............................");
+    System.out.println("Consuming Input Data ...............................");
+    System.out.println("Consuming Input Data ...............................");
+    System.out.println("Consuming Input Data ...............................");
+    System.out.println("Consuming Input Data ...............................");
+    System.out.println("Consuming Input Data ...............................");
     System.out.println(newData);
     for (Map.Entry<String,Integer> entry :
          ExampleBatchLayerUpdate.countDistinctOtherWords(newData).entrySet()) {
