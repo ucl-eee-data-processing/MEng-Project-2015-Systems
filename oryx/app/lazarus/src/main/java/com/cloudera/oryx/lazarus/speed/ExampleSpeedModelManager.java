@@ -81,7 +81,7 @@ public final class ExampleSpeedModelManager implements SpeedModelManager<String,
     System.out.println("Consuming Input Data ...............................");
     System.out.println(newData);
     System.out.println("Iterating through the consumed Data ...............................");
-    System.out.println(newData.values().toArray());
+    System.out.println(newData.collect());
     System.out.println("Finished Iterating Through the Data...............................");
     for (Map.Entry<String,Integer> entry :
          ExampleBatchLayerUpdate.countDistinctOtherWords(newData).entrySet()) {
