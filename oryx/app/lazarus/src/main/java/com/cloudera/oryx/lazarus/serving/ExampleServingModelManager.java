@@ -41,6 +41,8 @@ public final class ExampleServingModelManager extends AbstractServingModelManage
       Collections.synchronizedMap(new HashMap<String,Integer>());
 
   public ExampleServingModelManager(Config config) {
+    System.out.println("Serving Model Config");
+    System.out.println(config);
     super(config);
   }
 
@@ -49,11 +51,15 @@ public final class ExampleServingModelManager extends AbstractServingModelManage
     while (updateIterator.hasNext()) {
       KeyMessage<String,String> km = updateIterator.next();
       String key = km.getKey();
+      System.out.println("Updating and reading from Model ..............");
+      System.out.println(key);
       String message = km.getMessage();
+      System.out.println("Printing Message ...............................");
+      System.out.println(message);
       switch (key) {
         case "MODEL":
           @SuppressWarnings("unchecked")
-          Map<String,Integer> model = (Map<String,Integer>) new ObjectMapper().readValue(message, Map.class);
+          Map<String,Integer> mode l = (Map<String,Integer>) new ObjectMapper().readValue(message, Map.class);
           distinctOtherWords.keySet().retainAll(model.keySet());
           for (Map.Entry<String,Integer> entry : model.entrySet()) {
             distinctOtherWords.put(entry.getKey(), entry.getValue());
@@ -68,7 +74,9 @@ public final class ExampleServingModelManager extends AbstractServingModelManage
       }
     }
   }
-
+  
+ 
+ // Model that will generate the data
   @Override
   public ServingModel getModel() {
     return new ExampleServingModel(distinctOtherWords);

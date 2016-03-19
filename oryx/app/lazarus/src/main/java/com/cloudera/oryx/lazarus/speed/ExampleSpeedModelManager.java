@@ -71,6 +71,8 @@ public final class ExampleSpeedModelManager implements SpeedModelManager<String,
   @Override
   public Iterable<String> buildUpdates(JavaPairRDD<String,String> newData) {
     List<String> updates = new ArrayList<>();
+    
+    // Code for updating the models is to be implemented here
     System.out.println("Consuming Input Data ...............................");
     System.out.println("Consuming Input Data ...............................");
     System.out.println("Consuming Input Data ...............................");

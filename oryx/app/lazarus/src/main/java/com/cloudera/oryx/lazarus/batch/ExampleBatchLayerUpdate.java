@@ -53,7 +53,7 @@ public final class ExampleBatchLayerUpdate implements BatchLayerUpdate<String,St
     String modelString;
     try {
      System.out.println("Print New Data ...................................");
-     System.out.println(newData.toArray());
+     System.out.println(newData);
      System.out.println("Printing All Data .................................");
      System.out.println(allData);
       modelString = new ObjectMapper().writeValueAsString(countDistinctOtherWords(allData));
