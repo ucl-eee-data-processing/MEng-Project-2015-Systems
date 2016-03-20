@@ -41,8 +41,8 @@ public final class ExampleServingModelManager extends AbstractServingModelManage
       Collections.synchronizedMap(new HashMap<String,Integer>());
 
   public ExampleServingModelManager(Config config) {
-    System.out.println("Serving Model Config");
-    System.out.println(config);
+    //System.out.println("Serving Model Config");
+    //System.out.println(config);
     super(config);
   }
 
@@ -59,7 +59,7 @@ public final class ExampleServingModelManager extends AbstractServingModelManage
       switch (key) {
         case "MODEL":
           @SuppressWarnings("unchecked")
-          Map<String,Integer> mode l = (Map<String,Integer>) new ObjectMapper().readValue(message, Map.class);
+          Map<String,Integer> model = (Map<String,Integer>) new ObjectMapper().readValue(message, Map.class);
           distinctOtherWords.keySet().retainAll(model.keySet());
           for (Map.Entry<String,Integer> entry : model.entrySet()) {
             distinctOtherWords.put(entry.getKey(), entry.getValue());

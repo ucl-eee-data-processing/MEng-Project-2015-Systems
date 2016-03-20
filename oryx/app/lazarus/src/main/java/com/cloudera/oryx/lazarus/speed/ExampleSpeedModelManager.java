@@ -42,6 +42,9 @@ public final class ExampleSpeedModelManager implements SpeedModelManager<String,
 
   private final Map<String,Integer> distinctOtherWords =
       Collections.synchronizedMap(new HashMap<String,Integer>());
+  //Need to declare global Params for Theta
+  private final Map<String,Integer> totalEnergyConsumed = 
+          Collections.synchronizedMap(new HashMap<String,Integer>());
 
   @Override
   public void consume(Iterator<KeyMessage<String,String>> updateIterator,
@@ -68,11 +71,12 @@ public final class ExampleSpeedModelManager implements SpeedModelManager<String,
     }
   }
 
-  @Override
+ @Override
   public Iterable<String> buildUpdates(JavaPairRDD<String,String> newData) {
+     //Initial Theta to be zeros 
     List<String> updates = new ArrayList<>();
-    
-    // Code for updating the models is to be implemented here
+    // Needs to read OryxUpdate too
+    //OryxInputCode for updating the models is to be implemented here
     System.out.println("Consuming Input Data ...............................");
     System.out.println("Consuming Input Data ...............................");
     System.out.println("Consuming Input Data ...............................");
@@ -80,11 +84,12 @@ public final class ExampleSpeedModelManager implements SpeedModelManager<String,
     System.out.println("Consuming Input Data ...............................");
     System.out.println("Consuming Input Data ...............................");
     System.out.println("Consuming Input Data ...............................");
-    System.out.println("Consuming Input Data ...............................");
+    System.out.println("Consuming Input Data Updatettett ...............................");
     System.out.println(newData);
     System.out.println("Iterating through the consumed Data ...............................");
     System.out.println(newData.collect());
     System.out.println("Finished Iterating Through the Data...............................");
+    //
     for (Map.Entry<String,Integer> entry :
          ExampleBatchLayerUpdate.countDistinctOtherWords(newData).entrySet()) {
       String word = entry.getKey();
@@ -95,11 +100,58 @@ public final class ExampleSpeedModelManager implements SpeedModelManager<String,
         newCount = oldCount == null ? count : oldCount + count;
         distinctOtherWords.put(word, newCount);
       }
+      // Model being updated
       updates.add(word + "," + newCount);
     }
+    // If Initially Empty 
     return updates;
   }
-
+ 
+  /*
+  
+ // Total Energy Consumed Per Hour
+ @Override
+  public Iterable<String> buildUpdates(JavaPairRDD<String,String> newData) {
+     //Initial Theta to be zeros 
+    List<String> updates = new ArrayList<>();
+    // Needs to read OryxUpdate too
+    //OryxInputCode for updating the models is to be implemented here
+    System.out.println("Consuming Input Data ...............................");
+    System.out.println("Consuming Input Data ...............................");
+    System.out.println("Consuming Input Data ...............................");
+    System.out.println("Consuming Input Data ...............................");
+    System.out.println("Consuming Input Data ...............................");
+    System.out.println("Consuming Input Data ...............................");
+    System.out.println("Consuming Input Data ...............................");
+    System.out.println("Consuming Input Data Updatettett ...............................");
+    System.out.println(newData);
+    System.out.println("Iterating through the consumed Data ...............................");
+    System.out.println(newData.collect());
+    System.out.println("Finished Iterating Through the Data...............................");
+    //
+    for (Map.Entry<String,Integer> entry :
+         ExampleBatchLayerUpdate.countDistinctOtherWords(newData).entrySet()) {
+      String word = entry.getKey();
+      int count = entry.getValue();
+      int newCount;
+      synchronized (distinctOtherWords) {
+        Integer oldCount = distinctOtherWords.get(word);
+        newCount = oldCount == null ? count : oldCount + count;
+        distinctOtherWords.put(word, newCount);
+      }
+      // Model being updated
+      updates.add(word + "," + newCount);
+    }
+    // If Initially Empty 
+    return updates;
+  } 
+*/
+  
+  
+  
+  
+  
+  // End of Implementation
   @Override
   public void close() {
     // do nothing

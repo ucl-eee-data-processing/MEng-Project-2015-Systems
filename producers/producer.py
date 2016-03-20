@@ -34,14 +34,14 @@ class LazarusProducer(Thread):
                  'weather': self.weather.publish_data()} 
         response = self.producer.send_messages(self.topic,json.dumps(data))
 	print response
-
+	print self.weather.publish_data()
     def run(self):
         while True:
-            time.sleep(30*60)
+            time.sleep(3)
             self._produce()
 
 if __name__ == '__main__':
-    timer = LazarusProducer(ip_address='rodrig-1.ee.ucl.ac.uk')
+    timer = LazarusProducer(ip_address='192.168.33.30')
     timer.start()
     #timer._produce()
     
