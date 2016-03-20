@@ -38,7 +38,7 @@ import com.cloudera.oryx.lazarus.batch.ExampleBatchLayerUpdate;
  * that the Batch Layer sees, but assumes all words seen are new and distinct, which is only
  * approximately true. Emits updates of the form "word,count".
  */
-public final class ExampleSpeedModelManager implements SpeedModelManager<String,String,String> {
+public final class LazarusSpeedModelManager implements SpeedModelManager<String,String,String> {
 
   private final Map<String,Integer> distinctOtherWords =
       Collections.synchronizedMap(new HashMap<String,Integer>());

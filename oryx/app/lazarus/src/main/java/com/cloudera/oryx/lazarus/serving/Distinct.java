@@ -48,9 +48,9 @@ public final class Distinct extends OryxResource {
     return count == null ? 0 : count;
   }
 
-  private ExampleServingModel getModel() {
+  private LazarusServingModel getModel() {
     @SuppressWarnings("unchecked")
-    ExampleServingModel model = (ExampleServingModel) getServingModelManager().getModel();
+    LazarusServingModel model = (LazarusServingModel) getServingModelManager().getModel();
     return model;
   }
 

@@ -35,12 +35,12 @@ import com.cloudera.oryx.api.serving.ServingModel;
  * Updates are "word,count" pairs representing new counts for a word. This class manages and exposes the
  * mapping to the Serving Layer applications.
  */
-public final class ExampleServingModelManager extends AbstractServingModelManager<String> {
+public final class LazarusServingModelManager extends AbstractServingModelManager<String> {
 
   private final Map<String,Integer> distinctOtherWords =
       Collections.synchronizedMap(new HashMap<String,Integer>());
 
-  public ExampleServingModelManager(Config config) {
+  public LazarusServingModelManager(Config config) {
     //System.out.println("Serving Model Config");
     //System.out.println(config);
     super(config);
@@ -79,7 +79,7 @@ public final class ExampleServingModelManager extends AbstractServingModelManage
  // Model that will generate the data
   @Override
   public ServingModel getModel() {
-    return new ExampleServingModel(distinctOtherWords);
+    return new LazarusServingModel(distinctOtherWords);
   }
 
 }

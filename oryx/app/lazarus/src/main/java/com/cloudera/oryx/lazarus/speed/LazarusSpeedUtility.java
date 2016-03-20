@@ -19,6 +19,6 @@ package com.cloudera.oryx.lazarus.speed;
  *
  * @author tokwii
  */
-public class LazarusUtility {
+public class LazarusSpeedUtility {
     
 }

@@ -22,11 +22,11 @@ import com.cloudera.oryx.api.serving.ServingModel;
 /**
  * {@link ServingModel} produced by {@link ExampleServingModelManager}.
  */
-public final class ExampleServingModel implements ServingModel {
+public final class LazarusServingModel implements ServingModel {
 
   private final Map<String,Integer> distinctOtherWords;
 
-  ExampleServingModel(Map<String,Integer> distinctOtherWords) {
+  LazarusServingModel(Map<String,Integer> distinctOtherWords) {
     this.distinctOtherWords = distinctOtherWords;
   }
 
