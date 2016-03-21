@@ -5,17 +5,20 @@ import json
 import time
 from time import strptime
 from requests.exceptions import ConnectionError
+import googlemaps
 from geopy.geocoders import Nominatim
 
 PROCESSOR_DIR = os.path.abspath(os.path.dirname(__file__))
+GOOGLE_API_KEY = "AIzaSyCfIz0XAMftyZ98phzC9dgEXZcKsyC7XLo"
 
 class MetroDataset(object):
 
-    def __init__(self, api_key="795c1ff0b7c8af640f1f88310e296cd8", address="2 Marsham St, London SW1P 4DF"):
+    def __init__(self, api_key="795c1ff0b7c8af640f1f88310e296cd8", address="Ithaca, NY 14850, United States"):
         self.api_key = api_key
         self.url = 'http://api.openweathermap.org/data/2.5/weather'
-        #self.geolocator = Nominatim()
-        #self.location = self.geolocator.geocode(address)
+        self.gmaps = googlemaps.Client(GOOGLE_API_KEY)
+        self.geocode_result = self.gmaps.geocode(address)
+        print self.geocode_result
 
     def current_time(self):
         current_time = datetime.datetime.now().strftime('%d/%m/%y %H:%M')
@@ -43,7 +46,8 @@ class MetroDataset(object):
     def publish_data(self):
         timestamp = self.current_time()
         if timestamp != None:
-            return self._current_data()['main']
+            return self._current_data()
+            #['main']
         else:
             return None
 
