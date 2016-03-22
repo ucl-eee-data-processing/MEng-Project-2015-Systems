@@ -9,16 +9,12 @@ import googlemaps
 from geopy.geocoders import Nominatim
 
 PROCESSOR_DIR = os.path.abspath(os.path.dirname(__file__))
-GOOGLE_API_KEY = "AIzaSyCfIz0XAMftyZ98phzC9dgEXZcKsyC7XLo"
 
 class MetroDataset(object):
 
     def __init__(self, api_key="795c1ff0b7c8af640f1f88310e296cd8", address="Ithaca, NY 14850, United States"):
         self.api_key = api_key
         self.url = 'http://api.openweathermap.org/data/2.5/weather'
-        self.gmaps = googlemaps.Client(GOOGLE_API_KEY)
-        self.geocode_result = self.gmaps.geocode(address)
-        print self.geocode_result
 
     def current_time(self):
         current_time = datetime.datetime.now().strftime('%d/%m/%y %H:%M')
@@ -34,12 +30,15 @@ class MetroDataset(object):
 
     def _current_data(self):
         #self.location.latitude
-        payload = {'lat': str(51.5,),'lon': str(-0.12),
+        payload = {'lat': str(42.4422823,),'lon': str(-76.5334803),
                   'APPID': self.api_key}
         try:
             # Decode Unicode
             api_request = requests.get(self.url, params=payload)
-            return api_request.json()
+            daylight = api_request.json()['sys']['sunset'] - api_request.json()['sys']['sunrise']
+            response = api_request.json()['main']
+            response.update({'daylight':daylight})
+            return response
         except ConnectionError:
             return None
 

@@ -9,6 +9,7 @@ from kafka.consumer import  SimpleConsumer
 from kafka.common import LeaderNotAvailableError
 from processor.weather import MetroDataset
 from processor.energy import EnergyDataset
+from processor.cornell import CornellEnergyDataset
 
 
 #FORMAT = '%(asctime)s.%(msecs)s:%(name)s:%(thread)d:%(levelname)s'\
@@ -23,18 +24,20 @@ class LazarusProducer(Thread):
         self.topic = topic  
         self.kafka = KafkaClient(ip_address + ':' + '9092')
         self.producer = SimpleProducer(self.kafka)
-        self.energy = EnergyDataset()
+        self.energy = CornellEnergyDataset()
+        #EnergyDataset()
         self.weather = MetroDataset()
 
     def _produce(self):
-        date, curr_time = self.weather.current_time()
+        date, curr_time = self.energy.current_time()
         data = { 'date': date,
                  'time' : curr_time,
                  'energy': self.energy.energy_consumption(),
                  'weather': self.weather.publish_data()} 
         response = self.producer.send_messages(self.topic,json.dumps(data))
-	print response
-	print self.weather.publish_data()
+	    #print data
+        print response
+
     def run(self):
         while True:
             time.sleep(3)
