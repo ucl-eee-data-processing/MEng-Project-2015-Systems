@@ -59,15 +59,12 @@ License.
       <version>2.1.1</version>
     </dependency>        
   </dependencies>
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <java.version>1.7</java.version>
-  </properties>
+  
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.7</java.version>
         <checkstyle.skip>true</checkstyle.skip>
-    </propertie>
+    </properties>
     <build>
         <plugins>
             <plugin>
