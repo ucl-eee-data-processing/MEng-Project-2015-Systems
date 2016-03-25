@@ -21,6 +21,7 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import java.util.Map;
+import java.util.Arrays;
 import com.cloudera.oryx.api.serving.OryxResource;
 
 /**
@@ -35,17 +36,7 @@ public final class Predict extends OryxResource {
   public Map<String,Integer> get() {
      LazarusServingUtility servingUtility = new LazarusServingUtility();
      Map<String,Integer> predictedData = servingUtility.predictedDummy("2016-01-01T09:30","2016-01-01T23:30");
-     
-    //ObjectMapper mapper = new ObjectMapper();
-    
-    /*Map<String,String> userData = new HashMap<String,String>();
-    userData.put("first", "Joe");
-    userData.put("last", "Sixpack");
-    userData.put("name", "Timothy Okwii");
-    userData.put("gender", "MALE");
-    userData.put("verified", "YES");
-    userData.put("userImage", "Rm9vYmFyIQ==");*/
-    return predictedData;
+     return predictedData;
   }
   
   @GET
@@ -54,6 +45,12 @@ public final class Predict extends OryxResource {
   public Map<String,Integer> get(@PathParam("start") String start, @PathParam("end") String end) {
     LazarusServingUtility servingUtility = new LazarusServingUtility();
     Map<String,Integer> predictedData = servingUtility.predictedDummy(start,end);
+    ArrayList<Double> tmp = servingUtility.weatherData("42.44","-76.53");
+    double [] weights = {2.689,56.7777,89.0034}; 
+    String str = LazarusServingUtility.weightsToString(weights);
+    System.out.println(str);
+    double [] strDouble = LazarusServingUtility.stringToWeights("2.689-56.7777-89.0034");
+    System.out.println(Arrays.toString(strDouble));
     return predictedData;
   }
   

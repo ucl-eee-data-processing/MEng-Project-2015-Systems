@@ -30,7 +30,7 @@ class MetroDataset(object):
 
     def _current_data(self):
         #self.location.latitude
-        payload = {'lat': str(42.4422823,),'lon': str(-76.5334803),
+        payload = {'lat': str(42.4422823),'lon': str(-76.5334803),
                   'APPID': self.api_key}
         try:
             # Decode Unicode

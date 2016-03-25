@@ -14,29 +14,28 @@
  * limitations under the License.
  */
 package com.cloudera.oryx.lazarus.serving;
-import org.bitpipeline.lib.owm.OwmClient;
 import java.util.Map;
+//import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Random;
-//import java.util.Date;
+import java.net.URLConnection;
+import java.net.URL;
+import java.io.InputStream;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.JsonNode;
+import java.io.IOException;
 
 /**
  *
  * @author tokwii
  */
 public class LazarusServingUtility {
-    public static final String OWN_API_KEY = "795c1ff0b7c8af640f1f88310e296cd8";
-    private OwmClient owm;
+    private final String OWN_API_KEY = "795c1ff0b7c8af640f1f88310e296cd8";
+    //private OwmClient owm;
  
     LazarusServingUtility(){
-    }
-
-    public void getCurrentWeather(String lat, String lon){
-        this.owm = new OwmClient();
-        this.owm.setAPPID(OWN_API_KEY);
-        //Object weatherData = this.owm.currentWeatherAtCity((float)lat, (float) lon,5);
-        //System.out.println(weatherData);
-    }
+     }
  
     public Map<String,Integer> predictedDummy(String start, String end){
         HashMap<String, Integer> energyData = new HashMap<String, Integer>();
@@ -80,4 +79,50 @@ public class LazarusServingUtility {
         }
     
     }
+    public static String weightsToString(double [] weights){
+        return  Double.valueOf(weights[0]).toString() + "-" + 
+                Double.valueOf(weights[1]).toString() + "-" + 
+                Double.valueOf(weights[2]).toString();
+    }
+  
+    public static double [] stringToWeights(String strWeights){
+        String [] strWeightArray = strWeights.split("-");
+        double [] doubleWeightArray = new double[3];
+        
+        for(int i=0; i < strWeightArray.length; i++){
+            doubleWeightArray[i] = Double.parseDouble(strWeightArray[i]);
+        }
+        return doubleWeightArray;
+    }
+    
+    public ArrayList<Double> weatherData(String lat, String lon){
+        try{
+            ArrayList<Double> currForecast = new ArrayList<Double>(); 
+            ObjectMapper mapper = new ObjectMapper();
+            String url = "http://api.openweathermap.org/data/2.5/weather?" + 
+                          "lat=" + lat + "&" +
+                          "lon=" + lon + "&" +
+                          "APPID=" + this.OWN_API_KEY;
+            URLConnection connection = new URL(url).openConnection();
+            InputStream response = connection.getInputStream(); 
+            JsonNode rootNode = mapper.readValue(response, JsonNode.class);
+            JsonNode temp = rootNode.path("main").path("temp");
+            JsonNode sunrise = rootNode.path("sys").path("sunrise");
+            JsonNode sunset = rootNode.path("sys").path("sunset");
+            
+            Double sunsetValue = Double.parseDouble(sunset.toString());
+            Double sunriseValue = Double.parseDouble(sunrise.toString());
+            Double temperature = Double.parseDouble(temp.toString());
+            Double daylight = Double.valueOf(sunsetValue.doubleValue() - sunriseValue.doubleValue());
+            currForecast.add(0,temperature);
+            currForecast.add(1,daylight);
+            System.out.println(currForecast);
+            return currForecast;
+        }catch(IOException e){
+             System.err.println(e);
+             
+        }
+        return null;
+     }
+    
 }
