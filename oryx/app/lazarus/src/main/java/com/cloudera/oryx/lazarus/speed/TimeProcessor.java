@@ -200,9 +200,16 @@ public class TimeProcessor {
         try {
             Date timeOfData = formatter.parse(doubleToString(time));
             cal.setTime(timeOfData);
+            String hours = new Integer(cal.get(Calendar.HOUR_OF_DAY)).toString();
+            String minutes = new Integer(cal.get(Calendar.MINUTE)).toString();
+            if (hours.length() != 2){
+                hours = "0" + hours;
+            }
+            if (minutes.length() != 2){
+                minutes = minutes + "0";
+            }
             
-            
-            timeOfDay = cal.get(Calendar.HOUR_OF_DAY) + ":" + cal.get(Calendar.MINUTE);
+            timeOfDay = hours + ":" + minutes;
 
         } catch (Exception e) {
             System.out.println(e.getMessage());
