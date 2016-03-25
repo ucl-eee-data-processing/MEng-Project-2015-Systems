@@ -131,7 +131,6 @@ public final class LazarusSpeedModelManager implements SpeedModelManager<String,
 
         return null;
     }
-
     // End of Implementation
     @Override
     public void close() {

@@ -37,36 +37,37 @@ License.
             <scope>provided</scope>
             <version>2.1.1</version>
         </dependency>
-    
-        <dependency>
-            <groupId>com.googlecode.json-simple</groupId>
-            <artifactId>json-simple</artifactId>
-            <version>1.1.1</version>
-        </dependency>
         <dependency>
             <groupId>org.apache.spark</groupId>
             <artifactId>spark-mllib_2.10</artifactId>
             <version>1.3.0</version>
         </dependency>
-
-        <!--
-         Use this only if you use APIs specific to the project's provided
-         application implementations, like the ALS Rescorer interface
-        -->
-        <dependency>
-            <groupId>com.cloudera.oryx</groupId>
-            <artifactId>oryx-app-api</artifactId>
-            <scope>provided</scope>
-            <version>2.1.1</version>
-        </dependency>
-    </dependencies>
-
+    	<dependency>
+         <groupId>com.cloudera.oryx</groupId>
+         <artifactId>oryx-api</artifactId>
+         <scope>provided</scope>
+         <version>2.1.1</version>
+      </dependency>
+    <!--
+      Use this only if you use APIs specific to the project's provided
+      application implementations, like the ALS Rescorer interface
+     -->
+    <dependency>
+      <groupId>com.cloudera.oryx</groupId>
+      <artifactId>oryx-app-api</artifactId>
+      <scope>provided</scope>
+      <version>2.1.1</version>
+    </dependency>        
+  </dependencies>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <java.version>1.7</java.version>
+  </properties>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.7</java.version>
         <checkstyle.skip>true</checkstyle.skip>
-    </properties>
-
+    </propertie>
     <build>
         <plugins>
             <plugin>
@@ -99,12 +100,10 @@ License.
             </plugin>
         </plugins>
     </build>
-
     <repositories>
         <repository>
             <id>cloudera</id>
             <url>https://repository.cloudera.com/artifactory/cloudera-repos/</url>
         </repository>
     </repositories>
-
 </project>
