@@ -47,6 +47,7 @@ public final class Add extends OryxResource {
     TopicProducer<?,String> inputProducer = getProducer();
     BufferedReader buffered = new BufferedReader(reader);
     for (String line; (line = buffered.readLine()) != null;) {
+      //Updates the Topics 
       inputProducer.send(null, line);
     }
   }

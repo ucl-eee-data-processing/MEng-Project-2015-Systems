@@ -47,7 +47,6 @@ public class RegressionModelBuilder implements Serializable {
     }
 
     private void initMap() {
-
         for (int i = 0; i < hoursOfDay.length; i++) {
             double[] thetas = new double[]{0, 0, 0};
             thetaMap.put(hoursOfDay[i], thetas);

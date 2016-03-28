@@ -34,7 +34,7 @@ public class LazarusServingUtility {
     private final String OWN_API_KEY = "795c1ff0b7c8af640f1f88310e296cd8";
     //private OwmClient owm;
  
-    LazarusServingUtility(){
+     public LazarusServingUtility(){
      }
  
     public Map<String,Integer> predictedDummy(String start, String end){

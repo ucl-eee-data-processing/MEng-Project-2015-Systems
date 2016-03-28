@@ -13,7 +13,9 @@
  * License.
  */
 package com.cloudera.oryx.lazarus.speed;
-
+// Timothy's Imports
+import com.cloudera.oryx.lazarus.serving.LazarusServingUtility;
+// End of Timothy's Imports
 import java.io.PrintWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -22,6 +24,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Arrays;
 
 import org.apache.hadoop.mapreduce.Job;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -63,14 +66,33 @@ public final class LazarusSpeedModelManager implements SpeedModelManager<String,
     //Need to declare global Params for Theta
     private final Map<String, Integer> totalEnergyConsumed
             = Collections.synchronizedMap(new HashMap<String, Integer>());
+   private final Map<String, double[] > modelWeights = 
+           Collections.synchronizedMap(new HashMap<String, double[] >());
 
+    //Updates the Model in Memory
     @Override
     public void consume(Iterator<KeyMessage<String, String>> updateIterator,
             Configuration hadoopConf) throws IOException {
+        //If the model in Memory is empty
+        if(!updateIterator.hasNext()){
+            for(int i = 0; i < 48; i ++ ){
+                String timeStamp = LazarusServingUtility.indexToTime(i);
+                modelWeights.put(timeStamp, new double []{0.0, 0.0, 0.0});
+            }
+        }
+        System.out.println(Arrays.toString(modelWeights.entrySet().toArray()));
+        System.out.println("Array Length ---------->");
+        System.out.println(Arrays.toString(modelWeights.entrySet().toArray()).length());
+        System.out.println("Consume Method ---------------------------------->\n\n\n");
+        
         while (updateIterator.hasNext()) {
             KeyMessage<String, String> km = updateIterator.next();
             String key = km.getKey();
             String message = km.getMessage();
+            System.out.println("Publishing Message ---------------------");
+            System.out.println(message);
+            System.out.println(key);
+            System.out.println("End of line -------------------------------->\n\n\n");
             switch (key) {
                 case "MODEL":
                     @SuppressWarnings("unchecked") Map<String, Integer> model = (Map<String, Integer>) new ObjectMapper().readValue(message, Map.class);
@@ -87,13 +109,16 @@ public final class LazarusSpeedModelManager implements SpeedModelManager<String,
             }
         }
     }
-
+    // Consume Previous Updates and Publishes the Models
     @Override
     public Iterable<String> buildUpdates(JavaPairRDD<String, String> newData) {
         //Initial Theta to be zeros 
         List<String> updates = new ArrayList<>();
+        //updates.add("Timothy");
+        //updates.add("Okwii");
+        //updates.add("Daniel");
 
-        // Needs to read OryxUpdate too
+        //Needs to read OryxUpdate too
         //OryxInputCode for updating the models is to be implemented here
         System.out.println("Consuming Input Data ..  UTKU.............................");
         System.out.println("Consuming Input Data ...............................");
@@ -129,12 +154,16 @@ public final class LazarusSpeedModelManager implements SpeedModelManager<String,
         //          System.exit(1);
         //       new java.util.Scanner(System.in).nextLine();
 
-        return null;
+        //return null;
+        return updates;
     }
+    
+    
+    
     // End of Implementation
     @Override
     public void close() {
-        throw new UnsupportedOperationException("Not supported yet."); //To 
+       // throw new UnsupportedOperationException("Not supported yet."); //To 
     }
 
 }
