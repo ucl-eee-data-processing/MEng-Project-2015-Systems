@@ -46,6 +46,7 @@ public final class ExampleSpeedModelManager implements SpeedModelManager<String,
   @Override
   public void consume(Iterator<KeyMessage<String,String>> updateIterator,
                       Configuration hadoopConf) throws IOException {
+  
     while (updateIterator.hasNext()) {
       KeyMessage<String,String> km = updateIterator.next();
       String key = km.getKey();

@@ -79,17 +79,21 @@ public class LazarusServingUtility {
         }
     
     }
-    public static String weightsToString(double [] weights){
-        return  Double.valueOf(weights[0]).toString() + "-" + 
+    public static String weightsToString(int index, double [] weights){
+        double timeIndex = (double) index;
+        return  Double.valueOf(timeIndex).toString() + "-" + 
+                Double.valueOf(weights[0]).toString() + "-" + 
                 Double.valueOf(weights[1]).toString() + "-" + 
                 Double.valueOf(weights[2]).toString();
     }
   
     public static double [] stringToWeights(String strWeights){
         String [] strWeightArray = strWeights.split("-");
-        double [] doubleWeightArray = new double[3];
-        
+        double [] doubleWeightArray = new double[4];
+        //Skip the time
+        //doubleWeightArray[0] = (double) timeIndex;
         for(int i=0; i < strWeightArray.length; i++){
+            
             doubleWeightArray[i] = Double.parseDouble(strWeightArray[i]);
         }
         return doubleWeightArray;

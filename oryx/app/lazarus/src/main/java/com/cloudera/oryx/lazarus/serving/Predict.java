@@ -48,20 +48,18 @@ public final class Predict extends OryxResource {
     LazarusServingUtility servingUtility = new LazarusServingUtility();
     Map<String,Integer> predictedData = servingUtility.predictedDummy(start,end);
     ArrayList<Double> tmp = servingUtility.weatherData("42.44","-76.53");
-    double [] weights = {2.689,56.7777,89.0034}; 
-    String str = LazarusServingUtility.weightsToString(weights);
+    double [] weights = {2.689,56.7777,89.0034};
+    int timeIndex = 2;
+    String str = LazarusServingUtility.weightsToString(timeIndex, weights);
     System.out.println(str);
     double time = 0.14592492;
-    //1458880200;
-    System.out.println(TimeProcessor.getTimeOfDay(time));
-    System.out.println(LazarusSpeedUtility.twentyFourHourTime(time));
-    
+    //System.out.println(LazarusSpeedUtility.twentyFourHourTime(time));
     double [] strDouble = LazarusServingUtility.stringToWeights("2.689-56.7777-89.0034");
-    System.out.println(Arrays.toString(strDouble));
+    //System.out.println(Arrays.toString(strDouble));
     return predictedData;
   }
   
-  @GET
+  /*@GET
   @Produces({MediaType.TEXT_PLAIN, MediaType.APPLICATION_JSON})
   @Path("{word}")
   public int get(@PathParam("word") String word) {
@@ -69,7 +67,7 @@ public final class Predict extends OryxResource {
     System.out.println("Model");
     System.out.println(getModel());
     return count == null ? 0 : count;
-  }
+  }*/
   private LazarusServingModel getModel() {
     @SuppressWarnings("unchecked")
     LazarusServingModel model = (LazarusServingModel) getServingModelManager().getModel();

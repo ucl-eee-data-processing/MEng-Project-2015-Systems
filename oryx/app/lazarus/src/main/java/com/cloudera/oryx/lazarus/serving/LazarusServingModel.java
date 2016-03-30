@@ -16,6 +16,7 @@
 package com.cloudera.oryx.lazarus.serving;
 
 import java.util.Map;
+import java.util.HashMap;
 
 import com.cloudera.oryx.api.serving.ServingModel;
 
@@ -24,10 +25,11 @@ import com.cloudera.oryx.api.serving.ServingModel;
  */
 public final class LazarusServingModel implements ServingModel {
 
-  private final Map<String,Integer> distinctOtherWords;
+  private final Map<String, double[] > modelWeights; 
 
-  LazarusServingModel(Map<String,Integer> distinctOtherWords) {
-    this.distinctOtherWords = distinctOtherWords;
+  LazarusServingModel(Map<String, double[]> modelWeights) {
+    //this.distinctOtherWords = distinctOtherWords;
+    this.modelWeights = modelWeights;
   }
 
   @Override
@@ -35,8 +37,7 @@ public final class LazarusServingModel implements ServingModel {
     return 1.0f;
   }
 
-  public Map<String,Integer> getWords() {
-    return distinctOtherWords;
+  public Map<String, double[]> getLinearModel() {
+    return modelWeights;
   }
-
 }

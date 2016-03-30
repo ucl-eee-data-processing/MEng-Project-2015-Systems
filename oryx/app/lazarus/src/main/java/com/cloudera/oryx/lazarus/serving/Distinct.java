@@ -30,7 +30,7 @@ import com.cloudera.oryx.api.serving.OryxResource;
  */
 @Path("/distinct")
 public final class Distinct extends OryxResource {
-
+/*
   @GET
   @Produces({MediaType.TEXT_PLAIN, MediaType.APPLICATION_JSON})
   public Map<String,Integer> get() {
@@ -46,7 +46,7 @@ public final class Distinct extends OryxResource {
     System.out.println("Model");
     System.out.println(getModel());
     return count == null ? 0 : count;
-  }
+  }*/
 
   private LazarusServingModel getModel() {
     @SuppressWarnings("unchecked")

@@ -36,50 +36,49 @@ import com.cloudera.oryx.api.serving.ServingModel;
  * mapping to the Serving Layer applications.
  */
 public final class LazarusServingModelManager extends AbstractServingModelManager<String> {
-
-  private final Map<String,Integer> distinctOtherWords =
-      Collections.synchronizedMap(new HashMap<String,Integer>());
-
+    
+    private final Map<String, double[] > modelWeights = 
+           Collections.synchronizedMap(new HashMap<String, double[] >());
+    
   public LazarusServingModelManager(Config config) {
-    //System.out.println("Serving Model Config");
-    //System.out.println(config);
     super(config);
   }
 
   @Override
   public void consume(Iterator<KeyMessage<String,String>> updateIterator, Configuration hadoopConf) throws IOException {
+    int index = 0;
     while (updateIterator.hasNext()) {
       KeyMessage<String,String> km = updateIterator.next();
       String key = km.getKey();
-      System.out.println("Updating and reading from Model ..............");
       System.out.println(key);
       String message = km.getMessage();
-      System.out.println("Printing Message ...............................");
-      System.out.println(message);
-      switch (key) {
-        case "MODEL":
-          @SuppressWarnings("unchecked")
-          Map<String,Integer> model = (Map<String,Integer>) new ObjectMapper().readValue(message, Map.class);
-          distinctOtherWords.keySet().retainAll(model.keySet());
-          for (Map.Entry<String,Integer> entry : model.entrySet()) {
-            distinctOtherWords.put(entry.getKey(), entry.getValue());
-          }
-          break;
-        case "UP":
-          String[] wordCount = message.split(",");
-          distinctOtherWords.put(wordCount[0], Integer.valueOf(wordCount[1]));
-          break;
-        default:
-          throw new IllegalArgumentException("Unknown key " + key);
+      if(message != null){
+        switch (key) {
+          case "MODEL":
+            break;
+          case "UP":
+            String [] messageArray = message.split("-");
+            int timeIndex = (int) Double.parseDouble(messageArray[0]);
+            String time = LazarusServingUtility.indexToTime(timeIndex);
+            System.out.println("TIME  FOR UPDATE   ---->" + time);
+            double[] weights = LazarusServingUtility.stringToWeights(message);
+            modelWeights.put(time, weights);
+            System.out.println("Reading Model in Serving layer! Message to be updated");
+            System.out.println(message);
+            break;
+          default:
+            throw new IllegalArgumentException("Unknown key " + key);
+        }
       }
     }
+    
   }
   
  
  // Model that will generate the data
   @Override
   public ServingModel getModel() {
-    return new LazarusServingModel(distinctOtherWords);
+    return new LazarusServingModel(modelWeights);
   }
 
 }

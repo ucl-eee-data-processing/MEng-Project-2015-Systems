@@ -74,16 +74,24 @@ public final class LazarusSpeedModelManager implements SpeedModelManager<String,
             KeyMessage<String, String> km = updateIterator.next();
             String key = km.getKey();
             String message = km.getMessage();
-            int modelIndex = updates.indexOf(message);
             switch (key) {
                 case "MODEL":
                     // Functionality to ready from already Existing Models in Kafka
                     break;
                 case "UP":
-                    if (message != null && modelIndex != -1 ){
+                    if (message != null){
+                        String [] messageArray = message.split("-");
+                        System.out.println(messageArray[0]);
+                        System.out.println(Arrays.toString(messageArray));
+                        int modelIndex = (int) Double.parseDouble(messageArray[0]);
                         String timeStamp = LazarusServingUtility.indexToTime(modelIndex);
                         double[] weights = LazarusServingUtility.stringToWeights(message);
+                        System.out.println("CONSUME TIME ------------ CONSUME TIME");
+                        System.out.println(modelIndex);
+                        System.out.println("Updating Weights //////////////////////////");
+                        System.out.println(timeStamp);
                         modelWeights.put(timeStamp, weights);
+                        System.out.println("Weighsrstststt");
                         System.out.println(Arrays.toString(weights));                        
                         
                     }
@@ -118,11 +126,15 @@ public final class LazarusSpeedModelManager implements SpeedModelManager<String,
         System.out.println(time + "<<<<<<<<<<<<<<<<<<<TIIIIIIIIIIIIIME!!!!");
         System.out.println("Retrieving the Corres Weights ...............");
         System.out.println(Arrays.toString(modelWeights.get(time)));
-       
-       LinearRegressionModel model = rmb.buildModel(rdd_records, modelWeights.get(time));
+        //Slice the Array for only weights
+        double[] previousWeights = Arrays.copyOfRange(modelWeights.get(time),1,4);
+        System.out.println("Slice Array ...............");
+        System.out.println(Arrays.toString(previousWeights));
+        
+       LinearRegressionModel model = rmb.buildModel(rdd_records, previousWeights );
        //rmb.thetaMap.put(time, rmb.getWeights(model));
-       String stringWeights = LazarusServingUtility.weightsToString(rmb.getWeights(model));
        int timeIndex = LazarusServingUtility.timeToIndex(time);
+       String stringWeights = LazarusServingUtility.weightsToString(timeIndex ,rmb.getWeights(model));
        updates.set(timeIndex,stringWeights);
        return updates;
     }
