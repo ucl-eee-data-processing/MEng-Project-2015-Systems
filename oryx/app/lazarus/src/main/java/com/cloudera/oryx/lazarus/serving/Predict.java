@@ -24,6 +24,7 @@ import java.util.Map;
 import java.util.Arrays;
 import java.util.ArrayList;
 import com.cloudera.oryx.lazarus.speed.TimeProcessor;
+import com.cloudera.oryx.lazarus.speed.LazarusSpeedUtility;
 import com.cloudera.oryx.api.serving.OryxResource;
 
 /**
@@ -50,8 +51,11 @@ public final class Predict extends OryxResource {
     double [] weights = {2.689,56.7777,89.0034}; 
     String str = LazarusServingUtility.weightsToString(weights);
     System.out.println(str);
-    double time = 1458880200;
+    double time = 0.14592492;
+    //1458880200;
     System.out.println(TimeProcessor.getTimeOfDay(time));
+    System.out.println(LazarusSpeedUtility.twentyFourHourTime(time));
+    
     double [] strDouble = LazarusServingUtility.stringToWeights("2.689-56.7777-89.0034");
     System.out.println(Arrays.toString(strDouble));
     return predictedData;

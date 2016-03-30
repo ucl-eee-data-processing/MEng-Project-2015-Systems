@@ -195,11 +195,15 @@ public class TimeProcessor {
     }
 
     public static String getTimeOfDay(double time) {
+        System.out.println("Time of the day-------------------------------->");
+        System.out.println(time);
+        
 
         String timeOfDay = null;
         try {
             Date timeOfData = formatter.parse(doubleToString(time));
             cal.setTime(timeOfData);
+            System.out.println(timeOfData);
             String hours = new Integer(cal.get(Calendar.HOUR_OF_DAY)).toString();
             String minutes = new Integer(cal.get(Calendar.MINUTE)).toString();
             if (hours.length() != 2){

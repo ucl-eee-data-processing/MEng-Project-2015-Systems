@@ -46,3 +46,4 @@
   - start-yarn.sh
   become_user: hadoop
   become: yes
+  ignore_errors: yes

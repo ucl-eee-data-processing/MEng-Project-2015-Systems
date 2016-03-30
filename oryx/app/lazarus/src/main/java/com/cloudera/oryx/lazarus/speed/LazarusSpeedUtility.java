@@ -14,11 +14,47 @@
  * limitations under the License.
  */
 package com.cloudera.oryx.lazarus.speed;
+import com.cloudera.oryx.lazarus.serving.LazarusServingUtility;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Date;
+import java.text.SimpleDateFormat;
+import java.util.TimeZone;
 
 /**
  *
  * @author tokwii
  */
 public class LazarusSpeedUtility {
+    
+    public LazarusSpeedUtility(){
+        
+    }
+    public static Map<String, double[]> initializeWeights(){
+        Map<String, double[] > modelWeights = 
+           Collections.synchronizedMap(new HashMap<String, double[] >());
+        for(int i = 0; i < 48; i ++ ){
+            String timeStamp = LazarusServingUtility.indexToTime(i);
+            modelWeights.put(timeStamp, new double []{0.0, 0.0, 0.0});
+        }
+        return modelWeights;
+    }
+    
+    public void loadExistingWeights(){
+    
+    }
+    public static String twentyFourHourTime(double scaledTime ){
+        double rescaler = 1000000;
+        double tmpTime = scaledTime *  rescaler;
+        double unixTime = tmpTime * 10000;
+        long sysTime =  (long) unixTime * 1000L;
+        Date date = new  Date(sysTime);
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy hh:mm");
+        sdf.setTimeZone(TimeZone.getTimeZone("America/New_York"));
+        String formattedDate = sdf.format(date);
+        String[] timeStamp = formattedDate.split(" ");
+        return timeStamp[1];
+    }
     
 }
