@@ -27,6 +27,7 @@ class CornellEnergyDataset(object):
     def current_time(self):
         dt = datetime.now(self.timezone)
         current_time = datetime.now(self.timezone).strftime('%d/%m/%y %H:%M')
+        print current_time
         date_time = current_time.split(" ")
         date_now ,time_now = date_time[0].split("/") ,date_time[1]
         date, month, year = date_now
