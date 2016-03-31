@@ -20,11 +20,8 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
-
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.typesafe.config.Config;
 import org.apache.hadoop.conf.Configuration;
-
 import com.cloudera.oryx.api.KeyMessage;
 import com.cloudera.oryx.api.serving.AbstractServingModelManager;
 import com.cloudera.oryx.api.serving.ServingModel;
@@ -38,47 +35,41 @@ import com.cloudera.oryx.api.serving.ServingModel;
 public final class LazarusServingModelManager extends AbstractServingModelManager<String> {
     
     private final Map<String, double[] > modelWeights = 
-           Collections.synchronizedMap(new HashMap<String, double[] >());
+        Collections.synchronizedMap(new HashMap<String, double[] >());
     
-  public LazarusServingModelManager(Config config) {
-    super(config);
-  }
-
-  @Override
-  public void consume(Iterator<KeyMessage<String,String>> updateIterator, Configuration hadoopConf) throws IOException {
-    int index = 0;
-    while (updateIterator.hasNext()) {
-      KeyMessage<String,String> km = updateIterator.next();
-      String key = km.getKey();
-      System.out.println(key);
-      String message = km.getMessage();
-      if(message != null){
-        switch (key) {
-          case "MODEL":
-            break;
-          case "UP":
-            String [] messageArray = message.split("-");
-            int timeIndex = (int) Double.parseDouble(messageArray[0]);
-            String time = LazarusServingUtility.indexToTime(timeIndex);
-            System.out.println("TIME  FOR UPDATE   ---->" + time);
-            double[] weights = LazarusServingUtility.stringToWeights(message);
-            modelWeights.put(time, weights);
-            System.out.println("Reading Model in Serving layer! Message to be updated");
-            System.out.println(message);
-            break;
-          default:
-            throw new IllegalArgumentException("Unknown key " + key);
-        }
-      }
+    public LazarusServingModelManager(Config config) {
+        super(config);
     }
-    
-  }
+
+    @Override
+    public void consume(Iterator<KeyMessage<String,String>> updateIterator, Configuration hadoopConf) throws IOException {
+       //Update Serving Model
+        while (updateIterator.hasNext()) {
+            KeyMessage<String,String> km = updateIterator.next();
+            String key = km.getKey();
+            String message = km.getMessage();
+            if(message != null){
+              switch (key) {
+                case "MODEL":
+                   break;
+                case "UP":
+                    String [] messageArray = message.split("-");
+                    int timeIndex = (int) Double.parseDouble(messageArray[0]);
+                    String time = LazarusServingUtility.indexToTime(timeIndex);
+                    double[] weights = LazarusServingUtility.stringToWeights(message);
+                    modelWeights.put(time, weights);
+                    break;
+                default:
+                    throw new IllegalArgumentException("Unknown key " + key);
+              }
+            }
+        }
+    }
   
  
- // Model that will generate the data
+ // Retrieve Updated Model
   @Override
   public ServingModel getModel() {
     return new LazarusServingModel(modelWeights);
   }
-
 }

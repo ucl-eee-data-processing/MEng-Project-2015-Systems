@@ -28,16 +28,14 @@ public final class LazarusServingModel implements ServingModel {
   private final Map<String, double[] > modelWeights; 
 
   LazarusServingModel(Map<String, double[]> modelWeights) {
-    //this.distinctOtherWords = distinctOtherWords;
     this.modelWeights = modelWeights;
   }
-
   @Override
   public float getFractionLoaded() {
     return 1.0f;
   }
-
-  public Map<String, double[]> getLinearModel() {
+  
+  public Map<String, double[]> getModelWeights() {
     return modelWeights;
   }
 }

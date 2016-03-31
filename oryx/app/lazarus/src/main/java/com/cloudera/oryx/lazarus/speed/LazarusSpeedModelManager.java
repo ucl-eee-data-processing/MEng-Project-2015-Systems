@@ -64,7 +64,7 @@ public final class LazarusSpeedModelManager implements SpeedModelManager<String,
     
     private final Map<String, double[] > modelWeights = LazarusSpeedUtility.initializeWeights();   
     private final List<String> updates = Arrays.asList(new String[48]);
-
+    
     //Updates the Model in Memory
     @Override
     public void consume(Iterator<KeyMessage<String, String>> updateIterator,

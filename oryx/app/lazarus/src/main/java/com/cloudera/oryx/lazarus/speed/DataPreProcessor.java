@@ -1,7 +1,5 @@
 package com.cloudera.oryx.lazarus.speed;
-
 import java.io.Serializable;
-
 import org.apache.spark.mllib.linalg.Vectors;
 import org.apache.spark.mllib.regression.LabeledPoint;
 import org.json.simple.JSONObject;

@@ -21,11 +21,13 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import java.util.Map;
+import java.util.HashMap;
 import java.util.Arrays;
 import java.util.ArrayList;
 import com.cloudera.oryx.lazarus.speed.TimeProcessor;
 import com.cloudera.oryx.lazarus.speed.LazarusSpeedUtility;
 import com.cloudera.oryx.api.serving.OryxResource;
+import java.util.Vector;
 
 /**
  * Responds to a GET request to {@code /distinct}. Returns all distinct words and their count.
@@ -47,15 +49,37 @@ public final class Predict extends OryxResource {
   public Map<String,Integer> get(@PathParam("start") String start, @PathParam("end") String end) {
     LazarusServingUtility servingUtility = new LazarusServingUtility();
     Map<String,Integer> predictedData = servingUtility.predictedDummy(start,end);
-    ArrayList<Double> tmp = servingUtility.weatherData("42.44","-76.53");
-    double [] weights = {2.689,56.7777,89.0034};
-    int timeIndex = 2;
-    String str = LazarusServingUtility.weightsToString(timeIndex, weights);
-    System.out.println(str);
-    double time = 0.14592492;
-    //System.out.println(LazarusSpeedUtility.twentyFourHourTime(time));
-    double [] strDouble = LazarusServingUtility.stringToWeights("2.689-56.7777-89.0034");
-    //System.out.println(Arrays.toString(strDouble));
+    ArrayList<Double> tmp = LazarusServingUtility.weatherData("42.44","-76.53");
+    System.out.println(tmp.toString());
+    System.out.println("Showing the latest Models ---------------------------->");
+    Map<String, double[] > modelWeights = getModel().getModelWeights();
+    for (String key : modelWeights.keySet()){
+        if (key != null){
+          System.out.println(key + " " + Arrays.toString(modelWeights.get(key)));
+        }
+    } 
+    System.out.println("Printing out Generated Time Stampss----------------------");
+    Map<String, Long> stringTime = LazarusServingUtility.stringUnixTime(start,end);
+    for (String key : stringTime.keySet()){
+        if (key != null){
+          System.out.println(key + " " + stringTime.get(key).toString());
+        }
+    } 
+    System.out.println("Printing out Scaled Features ----------------------");
+    Map<String, ArrayList<Double>> scaledTestData = 
+            LazarusServingUtility.scaledTestDataSet(start,end);
+    
+    for (String key : scaledTestData.keySet()){
+        if (key != null){
+          System.out.println(key + " " + scaledTestData.get(key).toString());
+        }
+    } 
+    System.out.println("Predicted Results ...................................");
+    Map<String, Double> energyUsage = predictEnergyUsage(modelWeights, scaledTestData);
+    for (String key : energyUsage.keySet()){
+          System.out.println(key + " " + energyUsage.get(key).toString());
+    } 
+    
     return predictedData;
   }
   
@@ -72,6 +96,27 @@ public final class Predict extends OryxResource {
     @SuppressWarnings("unchecked")
     LazarusServingModel model = (LazarusServingModel) getServingModelManager().getModel();
     return model;
+  }
+  
+  private static Map<String, Double> predictEnergyUsage(Map<String, double[] > modelWeights,
+                                                        Map<String, ArrayList<Double>> scaledTestData){
+    Map<String, Double>  predictedValues = new HashMap<String, Double>();
+    for(String key : scaledTestData.keySet()){
+        String time = key.split("T")[1];
+        if(!modelWeights.containsKey(time)){
+            predictedValues.put(key, Double.NaN);
+        }else{
+            System.out.println(time);
+            double[] weights = Arrays.copyOfRange(modelWeights.get(time),1,4);
+            ArrayList<Double> scaledData = scaledTestData.get(key);
+            double dotProduct = 0.0;
+            for (int i=0; i< weights.length; i++){
+                dotProduct = dotProduct + weights[i]* scaledData.get(i).doubleValue();
+            }
+            predictedValues.put(key,new Double(dotProduct));
+        }
+    }
+    return predictedValues;
   }
   
 }

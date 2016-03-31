@@ -37,7 +37,8 @@ class CornellEnergyDataset(object):
             minutes = 30
         else:
             minutes = 0
-        dt1 = datetime(int(year),int(month), int(date), int(hour),minutes)
+        dt1 = datetime(int(year),int(month), int(date), int(hour), minutes, tzinfo=self.timezone)
+	print dt1.strftime('%d/%m/%y %H:%M')
         return date_time[0], dt1.strftime("%s")
 
 if __name__ == '__main__':
