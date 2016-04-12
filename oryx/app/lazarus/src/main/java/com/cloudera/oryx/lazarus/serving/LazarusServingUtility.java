@@ -28,6 +28,8 @@ import java.util.Date;
 import java.text.SimpleDateFormat;
 import java.text.ParseException;
 import java.util.TimeZone;
+import java.lang.reflect.Proxy;
+import java.net.InetSocketAddress;
 
 /**
  *
@@ -136,7 +138,8 @@ public class LazarusServingUtility {
                           "lon=" + lon + "&" +
                           "APPID=" + "d29a19d75ec088075ef02e1019ae3948";
                     //"795c1ff0b7c8af640f1f88310e296cd8";
-            URLConnection connection = new URL(url).openConnection();
+            Proxy proxy = new Proxy(Proxy.Type.HTTP, new InetSocketAddress("wwwcache.ee.ucl.ac.uk", 8080));
+            URLConnection connection = new URL(url).openConnection(proxy);
             InputStream response = connection.getInputStream(); 
             JsonNode rootNode = mapper.readValue(response, JsonNode.class);
             JsonNode temp = rootNode.path("main").path("temp");
@@ -166,8 +169,7 @@ public class LazarusServingUtility {
         Map<String, Long> timeUnix = stringUnixTime(start,end);
         ArrayList<Double> weatherForeCast = weatherData(lat, log);
         if(weatherForeCast.size() == 0){
-            weatherForeCast = weatherData(lat, log);
-            
+            weatherForeCast = weatherData(lat, log);  
         }
         for (String key: timeUnix.keySet()){
             ArrayList<Double> scaledData = new ArrayList<Double>(3);
