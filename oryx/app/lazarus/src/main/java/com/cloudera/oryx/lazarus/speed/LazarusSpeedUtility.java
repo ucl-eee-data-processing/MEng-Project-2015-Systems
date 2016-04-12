@@ -45,10 +45,11 @@ public class LazarusSpeedUtility {
     
     }
     public static String twentyFourHourTime(double scaledTime ){
+        long small = 2L;
         double rescaler = 1000000;
         double tmpTime = scaledTime *  rescaler;
         double unixTime = tmpTime * 10000;
-        long sysTime =  (long) unixTime * 1000L;
+        long sysTime =  (long) unixTime * 1000L + small;
         Date date = new  Date(sysTime);
         SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy HH:mm");
         sdf.setTimeZone(TimeZone.getTimeZone("UTC"));
