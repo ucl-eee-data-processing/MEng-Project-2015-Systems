@@ -91,6 +91,10 @@ public final class LazarusSpeedModelManager implements SpeedModelManager<String,
 
        String time = LazarusSpeedUtility.twentyFourHourTime(rdd_records.first().features().apply(0));
        System.out.println("Array BEING SPlit ................");
+        for (String key : modelWeights.keySet()){
+            System.out.println(key + " " + modelWeights.get(key).toString());
+            
+        }
        System.out.println(time);
        System.out.println(Arrays.toString(modelWeights.get(time)));
        double[] previousWeights = Arrays.copyOfRange(modelWeights.get(time),2,5);
