@@ -46,12 +46,7 @@ public final class Predict extends OryxResource {
   @GET
   @Produces({MediaType.TEXT_PLAIN, MediaType.APPLICATION_JSON})
   @Path("/{start}/{end}")
-  public Map<String,Integer> get(@PathParam("start") String start, @PathParam("end") String end) {
-    LazarusServingUtility servingUtility = new LazarusServingUtility();
-    Map<String,Integer> predictedData = servingUtility.predictedDummy(start,end);
-    ArrayList<Double> tmp = LazarusServingUtility.weatherData("42.44","-76.53");
-    System.out.println(tmp.toString());
-    System.out.println("Showing the latest Models ---------------------------->");
+  public Map<String, Double> get(@PathParam("start") String start, @PathParam("end") String end) {
     Map<String, double[] > modelWeights = getModel().getModelWeights();
     for (String key : modelWeights.keySet()){
         if (key != null){
@@ -79,19 +74,9 @@ public final class Predict extends OryxResource {
     for (String key : energyUsage.keySet()){
           System.out.println(key + " " + energyUsage.get(key).toString());
     } 
-    
-    return predictedData;
+    return energyUsage;
   }
   
-  /*@GET
-  @Produces({MediaType.TEXT_PLAIN, MediaType.APPLICATION_JSON})
-  @Path("{word}")
-  public int get(@PathParam("word") String word) {
-    Integer count = getModel().getWords().get(word);
-    System.out.println("Model");
-    System.out.println(getModel());
-    return count == null ? 0 : count;
-  }*/
   private LazarusServingModel getModel() {
     @SuppressWarnings("unchecked")
     LazarusServingModel model = (LazarusServingModel) getServingModelManager().getModel();
@@ -106,10 +91,10 @@ public final class Predict extends OryxResource {
         if(!modelWeights.containsKey(time)){
             predictedValues.put(key, Double.NaN);
         }else{
-            System.out.println(time);
-            double[] weights = Arrays.copyOfRange(modelWeights.get(time),1,4);
+            double[] interceptWeights = modelWeights.get(time);
+            double[] weights = Arrays.copyOfRange(interceptWeights,2,5);
             ArrayList<Double> scaledData = scaledTestData.get(key);
-            double dotProduct = 0.0;
+            double dotProduct = interceptWeights[1];
             for (int i=0; i< weights.length; i++){
                 dotProduct = dotProduct + weights[i]* scaledData.get(i).doubleValue();
             }

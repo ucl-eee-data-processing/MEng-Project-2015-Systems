@@ -13,41 +13,22 @@
  * License.
  */
 package com.cloudera.oryx.lazarus.speed;
-// Timothy's Imports
-import com.cloudera.oryx.lazarus.speed.LazarusSpeedUtility;
 import com.cloudera.oryx.lazarus.serving.LazarusServingUtility;
-// End of Timothy's Imports
-import java.io.PrintWriter;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Arrays;
-
-import org.apache.hadoop.mapreduce.Job;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaRDD;
-import org.apache.spark.api.java.JavaSparkContext;
 import com.cloudera.oryx.api.KeyMessage;
 import com.cloudera.oryx.api.speed.SpeedModelManager;
-import com.cloudera.oryx.lazarus.batch.ExampleBatchLayerUpdate;
 import java.io.Serializable;
 import org.apache.spark.api.java.function.Function;
-import org.apache.spark.mllib.linalg.Vectors;
 import org.apache.spark.mllib.regression.LabeledPoint;
 import org.apache.spark.mllib.regression.LinearRegressionModel;
-import org.apache.spark.rdd.RDD;
-import org.apache.spark.mllib.regression.LinearRegressionWithSGD;
+import java.io.IOException;
 
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
-import scala.Tuple2;
 
 /**
  * Also counts and emits counts of number of distinct words that occur with
@@ -62,6 +43,7 @@ public final class LazarusSpeedModelManager implements SpeedModelManager<String,
     final RegressionModelBuilder rmb = new RegressionModelBuilder();
     final DataPreProcessor dpp = new DataPreProcessor();
     
+    //Curren
     private final Map<String, double[] > modelWeights = LazarusSpeedUtility.initializeWeights();   
     private final List<String> updates = Arrays.asList(new String[48]);
     
@@ -86,14 +68,7 @@ public final class LazarusSpeedModelManager implements SpeedModelManager<String,
                         int modelIndex = (int) Double.parseDouble(messageArray[0]);
                         String timeStamp = LazarusServingUtility.indexToTime(modelIndex);
                         double[] weights = LazarusServingUtility.stringToWeights(message);
-                        System.out.println("CONSUME TIME ------------ CONSUME TIME");
-                        System.out.println(modelIndex);
-                        System.out.println("Updating Weights //////////////////////////");
-                        System.out.println(timeStamp);
-                        modelWeights.put(timeStamp, weights);
-                        System.out.println("Weighsrstststt");
-                        System.out.println(Arrays.toString(weights));                        
-                        
+                        modelWeights.put(timeStamp, weights);     
                     }
                     break;
                 default:
@@ -104,14 +79,6 @@ public final class LazarusSpeedModelManager implements SpeedModelManager<String,
     
     @Override
     public Iterable<String> buildUpdates(JavaPairRDD<String, String> newData) {
-        System.out.println("Consuming Input Data ..  UTKU.............................");
-        System.out.println("Consuming Input Data ...............................");
-        System.out.println("Consuming Input Data .....uTUKU..........................");
-        System.out.println(newData + "  THIS IS NEW DATA!!!!");
-        System.out.println("Iterating through the consumed Data ...............................");
-        System.out.println(newData.collect() + "   THIS IS COLLECT ---- 22222 !!!!!!!!!");
-        System.out.println("Finished Iterating Through the Data...............................");
-
         //returns an javaRDD of labeled points after preprocessing the data
         JavaRDD<LabeledPoint> rdd_records;
         rdd_records = newData.values().map(
@@ -122,19 +89,13 @@ public final class LazarusSpeedModelManager implements SpeedModelManager<String,
             }
         });
 
-        String time = LazarusSpeedUtility.twentyFourHourTime(rdd_records.first().features().apply(0));
-        System.out.println(time + "<<<<<<<<<<<<<<<<<<<TIIIIIIIIIIIIIME!!!!");
-        System.out.println("Retrieving the Corres Weights ...............");
-        System.out.println(Arrays.toString(modelWeights.get(time)));
-        //Slice the Array for only weights
-        double[] previousWeights = Arrays.copyOfRange(modelWeights.get(time),1,4);
-        System.out.println("Slice Array ...............");
-        System.out.println(Arrays.toString(previousWeights));
-        
+       String time = LazarusSpeedUtility.twentyFourHourTime(rdd_records.first().features().apply(0));
+       double[] previousWeights = Arrays.copyOfRange(modelWeights.get(time),2,5);
        LinearRegressionModel model = rmb.buildModel(rdd_records, previousWeights );
-       //rmb.thetaMap.put(time, rmb.getWeights(model));
+       double intercept = model.intercept();
+       System.out.println(intercept);
        int timeIndex = LazarusServingUtility.timeToIndex(time);
-       String stringWeights = LazarusServingUtility.weightsToString(timeIndex ,rmb.getWeights(model));
+       String stringWeights = LazarusServingUtility.weightsToString(timeIndex ,intercept ,rmb.getWeights(model));
        updates.set(timeIndex,stringWeights);
        return updates;
     }

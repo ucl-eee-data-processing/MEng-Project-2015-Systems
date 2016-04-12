@@ -51,7 +51,6 @@ public class RegressionModelBuilder implements Serializable {
             double[] thetas = new double[]{0, 0, 0};
             thetaMap.put(hoursOfDay[i], thetas);
         }
-        System.out.println(">>>>>>>>>>>>>>>>>>>>>> THETA MAP INITIALISED<<<<<<<<<<<<<<<<<<<<<<<<<<");
 
     }
 
@@ -64,7 +63,8 @@ public class RegressionModelBuilder implements Serializable {
         //  model.setFeatureScaling(true);    
         model.setIntercept(true);
         model.optimizer().setNumIterations(1);
-        model.optimizer().setStepSize(0.01);
+        model.optimizer().setStepSize(1);
+        // Pass 4 Paramters
 
         LinearRegressionModel model1 = model.run(rdd, Vectors.dense(thetas));
 

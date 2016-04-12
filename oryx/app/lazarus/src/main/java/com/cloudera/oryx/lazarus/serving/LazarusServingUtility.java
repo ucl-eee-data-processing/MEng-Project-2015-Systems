@@ -41,6 +41,7 @@ public class LazarusServingUtility {
      }
  
     public Map<String,Integer> predictedDummy(String start, String end){
+        
         HashMap<String, Integer> energyData = new HashMap<String, Integer>();
         Random rand = new Random();
         String startTime = start.split("T")[1];
@@ -107,17 +108,19 @@ public class LazarusServingUtility {
     }
     
     
-    public static String weightsToString(int index, double [] weights){
+    public static String weightsToString(int index,double intercept, double [] weights){
         double timeIndex = (double) index;
         return  Double.valueOf(timeIndex).toString() + "-" + 
+                Double.valueOf(intercept).toString() + "-" +
                 Double.valueOf(weights[0]).toString() + "-" + 
                 Double.valueOf(weights[1]).toString() + "-" + 
                 Double.valueOf(weights[2]).toString();
+        
     }
   
     public static double [] stringToWeights(String strWeights){
         String [] strWeightArray = strWeights.split("-");
-        double [] doubleWeightArray = new double[4];
+        double [] doubleWeightArray = new double[5];
         for(int i=0; i < strWeightArray.length; i++)    {        
             doubleWeightArray[i] = Double.parseDouble(strWeightArray[i]);
         }
@@ -131,7 +134,8 @@ public class LazarusServingUtility {
             String url = "http://api.openweathermap.org/data/2.5/weather?" + 
                           "lat=" + lat + "&" +
                           "lon=" + lon + "&" +
-                          "APPID=" + "795c1ff0b7c8af640f1f88310e296cd8";
+                          "APPID=" + "d29a19d75ec088075ef02e1019ae3948";
+                    //"795c1ff0b7c8af640f1f88310e296cd8";
             URLConnection connection = new URL(url).openConnection();
             InputStream response = connection.getInputStream(); 
             JsonNode rootNode = mapper.readValue(response, JsonNode.class);
@@ -161,6 +165,10 @@ public class LazarusServingUtility {
         Map<String, ArrayList<Double>> testData = new HashMap<String, ArrayList<Double>>(); 
         Map<String, Long> timeUnix = stringUnixTime(start,end);
         ArrayList<Double> weatherForeCast = weatherData(lat, log);
+        if(weatherForeCast.size() == 0){
+            weatherForeCast = weatherData(lat, log);
+            
+        }
         for (String key: timeUnix.keySet()){
             ArrayList<Double> scaledData = new ArrayList<Double>(3);
             double scaledTime = timeUnix.get(key).longValue()/1E10;

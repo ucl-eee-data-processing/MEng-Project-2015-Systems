@@ -36,7 +36,7 @@ public class LazarusSpeedUtility {
            Collections.synchronizedMap(new HashMap<String, double[] >());
         for(int i = 0; i < 48; i ++ ){
             String timeStamp = LazarusServingUtility.indexToTime(i);
-            modelWeights.put(timeStamp, new double []{ -1.0, 0.0, 0.0, 0.0});
+            modelWeights.put(timeStamp, new double []{ -1.0, 0.0, 0.0, 0.0, 0.0});
         }
         return modelWeights;
     }
@@ -51,13 +51,15 @@ public class LazarusSpeedUtility {
         long sysTime =  (long) unixTime * 1000L;
         Date date = new  Date(sysTime);
         SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy HH:mm");
+        sdf.setTimeZone(TimeZone.getTimeZone("UTC"));
         String formattedDate = sdf.format(date);
         String[] timeStamp = formattedDate.split(" ");
         String [] hourMinutes = timeStamp[1].split(":");
         String time;
         System.out.println(timeStamp[1]);
-        int hour = Integer.parseInt(hourMinutes[0]) - 1;
-        if(Integer.parseInt(hourMinutes[1]) < 30){
+        int hour = Integer.parseInt(hourMinutes[0]);
+        System.out.println(hourMinutes[1]);
+        if(Integer.parseInt(hourMinutes[1]) < 25){
             time = (new Integer(hour)).toString() + ":00";
         }else{
             time = (new Integer(hour)).toString()+ ":30";
