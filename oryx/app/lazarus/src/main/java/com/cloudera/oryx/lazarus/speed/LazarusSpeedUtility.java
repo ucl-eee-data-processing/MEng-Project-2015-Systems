@@ -59,7 +59,7 @@ public class LazarusSpeedUtility {
         System.out.println(timeStamp[1]);
         int hour = Integer.parseInt(hourMinutes[0]);
         System.out.println(hourMinutes[1]);
-        if(Integer.parseInt(hourMinutes[1]) < 25){
+        if(Integer.parseInt(hourMinutes[1]) < 29){
             time = (new Integer(hour)).toString() + ":00";
         }else{
             time = (new Integer(hour)).toString()+ ":30";
