@@ -96,7 +96,7 @@ public final class LazarusSpeedModelManager implements SpeedModelManager<String,
             
         }
        System.out.println(time);
-       System.out.println(Arrays.toString(modelWeights.get(time)));
+       System.out.println(Arrays.toString(modelWeights.get("06:30")));
        double[] previousWeights = Arrays.copyOfRange(modelWeights.get(time),2,5);
        LinearRegressionModel model;
        model = rmb.buildModel(rdd_records, previousWeights );
