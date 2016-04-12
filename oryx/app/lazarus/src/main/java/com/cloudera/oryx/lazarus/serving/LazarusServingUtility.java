@@ -121,6 +121,8 @@ public class LazarusServingUtility {
     }
   
     public static double [] stringToWeights(String strWeights){
+        System.out.println("Print Recieved Updatetetetteteteteteeee");
+        System.out.println(strWeights);
         String [] strWeightArray = strWeights.split("-");
         double [] doubleWeightArray = new double[5];
         for(int i=0; i < strWeightArray.length; i++)    {        
