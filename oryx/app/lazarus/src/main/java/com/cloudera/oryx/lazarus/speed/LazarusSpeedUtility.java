@@ -45,7 +45,7 @@ public class LazarusSpeedUtility {
     
     }
     public static String twentyFourHourTime(double scaledTime ){
-        long small = 2L;
+        long small = 1800L;
         double rescaler = 1000000;
         double tmpTime = scaledTime *  rescaler;
         double unixTime = tmpTime * 10000;
