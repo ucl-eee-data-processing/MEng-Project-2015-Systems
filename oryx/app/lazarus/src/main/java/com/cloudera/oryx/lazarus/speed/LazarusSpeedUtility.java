@@ -59,11 +59,15 @@ public class LazarusSpeedUtility {
         String time;
         System.out.println(timeStamp[1]);
         int hour = Integer.parseInt(hourMinutes[0]);
+        String stringHour = (new Integer(hour)).toString();
+        if (stringHour.length() == 1){
+            stringHour = "0" + stringHour;
+        }
         System.out.println(hourMinutes[1]);
         if(Integer.parseInt(hourMinutes[1]) < 29){
-            time = (new Integer(hour)).toString() + ":00";
+            time = stringHour + ":00";
         }else{
-            time = (new Integer(hour)).toString()+ ":30";
+            time = stringHour + ":30";
         }
         return time;
     }
