@@ -28,7 +28,7 @@ import java.util.Date;
 import java.text.SimpleDateFormat;
 import java.text.ParseException;
 import java.util.TimeZone;
-import java.lang.reflect.Proxy;
+import java.net.Proxy;
 import java.net.InetSocketAddress;
 
 /**
