@@ -20,7 +20,10 @@ class CornellEnergyDataset(object):
                    'lasttime': 0}
         try: 
             response = requests.get(CORNELL_API_ENDPOINT, params=payload)
-            return response.json()['status'][0]['value']
+            try:
+                return response.json()['status'][0]['value']
+            except IndexError:
+                return 18000
         except RequestException:
             return None
 

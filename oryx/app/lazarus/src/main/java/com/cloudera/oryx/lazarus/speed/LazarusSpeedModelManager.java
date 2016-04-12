@@ -90,8 +90,11 @@ public final class LazarusSpeedModelManager implements SpeedModelManager<String,
         });
 
        String time = LazarusSpeedUtility.twentyFourHourTime(rdd_records.first().features().apply(0));
+       System.out.println("Array BEING SPlit ................");
+       System.out.println(Arrays.toString(modelWeights.get(time)));
        double[] previousWeights = Arrays.copyOfRange(modelWeights.get(time),2,5);
-       LinearRegressionModel model = rmb.buildModel(rdd_records, previousWeights );
+       LinearRegressionModel model;
+       model = rmb.buildModel(rdd_records, previousWeights );
        double intercept = model.intercept();
        System.out.println(intercept);
        int timeIndex = LazarusServingUtility.timeToIndex(time);
