@@ -125,8 +125,19 @@ public class LazarusServingUtility {
         System.out.println(strWeights);
         String [] strWeightArray = strWeights.split("-");
         double [] doubleWeightArray = new double[5];
-        for(int i=0; i < strWeightArray.length; i++)    {        
-            doubleWeightArray[i] = Double.parseDouble(strWeightArray[i]);
+        int maxSize;
+        if("".equals(strWeightArray[1])){
+            maxSize = 4;
+        }else{
+            maxSize = strWeightArray.length;
+        }
+        
+        for(int i=0; i < maxSize ; i++) {
+            if("".equals(strWeightArray[1]) && i != 0){
+                doubleWeightArray[i] = Double.parseDouble(strWeightArray[i + 1]);
+            }else{
+                doubleWeightArray[i] = Double.parseDouble(strWeightArray[i]);
+            }
         }
         return doubleWeightArray;
     }
