@@ -116,11 +116,10 @@ public class LazarusServingUtility {
         System.out.println("Debuging String to Weights ..................................");
         System.out.println("Debuging String to Weights ..................................");
         System.out.println(Arrays.toString(weights));
-      
-        String data = Double.valueOf(timeIndex).toString() + "-" + 
-                Double.valueOf(intercept).toString() + "-" +
-                Double.valueOf(weights[0]).toString() + "-" + 
-                Double.valueOf(weights[1]).toString() + "-" + 
+        String data = Double.valueOf(timeIndex).toString() + "#" + 
+                Double.valueOf(intercept).toString() + "#" +
+                Double.valueOf(weights[0]).toString() + "#" + 
+                Double.valueOf(weights[1]).toString() + "#" + 
                 Double.valueOf(weights[2]).toString();
         return data;
         
@@ -129,7 +128,7 @@ public class LazarusServingUtility {
     public static double [] stringToWeights(String strWeights){
         System.out.println("Print Recieved Updatetetetteteteteteeee");
         System.out.println(strWeights);
-        String [] strWeightArray = strWeights.split("-");
+        String [] strWeightArray = strWeights.split("#");
         double [] doubleWeightArray = new double[5];
         int maxSize;
         if("".equals(strWeightArray[1])){

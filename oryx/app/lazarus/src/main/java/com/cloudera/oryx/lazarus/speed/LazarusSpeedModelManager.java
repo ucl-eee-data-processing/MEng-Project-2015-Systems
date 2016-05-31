@@ -62,7 +62,7 @@ public final class LazarusSpeedModelManager implements SpeedModelManager<String,
                     break;
                 case "UP":
                     if (message != null){
-                        String [] messageArray = message.split("-");
+                        String [] messageArray = message.split("#");
                         System.out.println(messageArray[0]);
                         System.out.println(Arrays.toString(messageArray));
                         int modelIndex = (int) Double.parseDouble(messageArray[0]);
