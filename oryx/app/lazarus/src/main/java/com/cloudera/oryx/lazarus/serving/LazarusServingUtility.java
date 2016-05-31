@@ -114,11 +114,13 @@ public class LazarusServingUtility {
         double timeIndex = (double) index;
         System.out.println("Debuging String to Weights ..................................");
         System.out.println("Debuging String to Weights ..................................");
-        return  Double.valueOf(timeIndex).toString() + "-" + 
+        System.out.println(weights);
+        String data = Double.valueOf(timeIndex).toString() + "-" + 
                 Double.valueOf(intercept).toString() + "-" +
                 Double.valueOf(weights[0]).toString() + "-" + 
                 Double.valueOf(weights[1]).toString() + "-" + 
                 Double.valueOf(weights[2]).toString();
+        return data;
         
     }
   
