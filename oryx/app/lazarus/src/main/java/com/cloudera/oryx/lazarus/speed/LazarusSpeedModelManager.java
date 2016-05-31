@@ -67,7 +67,11 @@ public final class LazarusSpeedModelManager implements SpeedModelManager<String,
                         System.out.println(Arrays.toString(messageArray));
                         int modelIndex = (int) Double.parseDouble(messageArray[0]);
                         String timeStamp = LazarusServingUtility.indexToTime(modelIndex);
+                        System.out.println("Message !!!!!!!!!!!!!!!!!!!!!!!!!");
+                        System.out.println(message);
                         double[] weights = LazarusServingUtility.stringToWeights(message);
+                        System.out.println("New Weightsssss");
+                        System.out.println(weights);
                         modelWeights.put(timeStamp, weights);     
                     }
                     break;
