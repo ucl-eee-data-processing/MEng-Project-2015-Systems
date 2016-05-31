@@ -14,7 +14,6 @@ public class DataPreProcessor implements Serializable{
          LabeledPoint lp = null;    
             
         try{
-                System.out.println(line + "<<<<<<<<<<<<<<<<<<< THIS IS LINE!!!!");
                 JSONObject json = (JSONObject) new JSONParser().parse(line);
                 JSONObject weatherJson = (JSONObject) json.get("weather");
                 

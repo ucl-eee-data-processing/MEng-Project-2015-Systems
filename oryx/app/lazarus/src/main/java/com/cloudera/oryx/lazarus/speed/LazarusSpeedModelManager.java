@@ -91,6 +91,8 @@ public final class LazarusSpeedModelManager implements SpeedModelManager<String,
 
        String time = LazarusSpeedUtility.twentyFourHourTime(rdd_records.first().features().apply(0));
        double[] previousWeights = Arrays.copyOfRange(modelWeights.get(time),2,5);
+       System.out.println("Updates >>>>>>>>>>>  >>>>>");
+       System.out.println(previousWeights);
        LinearRegressionModel model;
        model = rmb.buildModel(rdd_records, previousWeights );
        double intercept = model.intercept();

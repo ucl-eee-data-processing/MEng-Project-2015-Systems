@@ -34,13 +34,16 @@ class LazarusProducer(Thread):
                  'time' : curr_time,
                  'energy': self.energy.energy_consumption(),
                  'weather': self.weather.publish_data()} 
+#	self.producer.ensure_topic_exists(self.topic)
         response = self.producer.send_messages(self.topic,json.dumps(data))
-	print curr_time
-        print response
+	print "\n\n"
+	print data
+	print "\n\n"
+        #print response
 
     def run(self):
         while True:
-            time.sleep(15)
+            time.sleep(1)
             self._produce()
 
 if __name__ == '__main__':
