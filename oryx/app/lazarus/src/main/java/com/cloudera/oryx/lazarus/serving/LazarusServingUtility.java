@@ -16,6 +16,7 @@
 package com.cloudera.oryx.lazarus.serving;
 import java.util.Map;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Random;
 import java.net.URLConnection;
@@ -114,7 +115,8 @@ public class LazarusServingUtility {
         double timeIndex = (double) index;
         System.out.println("Debuging String to Weights ..................................");
         System.out.println("Debuging String to Weights ..................................");
-        System.out.println(weights);
+        System.out.println(Arrays.toString(weights));
+      
         String data = Double.valueOf(timeIndex).toString() + "-" + 
                 Double.valueOf(intercept).toString() + "-" +
                 Double.valueOf(weights[0]).toString() + "-" + 

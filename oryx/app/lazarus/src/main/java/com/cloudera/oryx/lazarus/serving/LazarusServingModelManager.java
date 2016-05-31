@@ -17,6 +17,7 @@ package com.cloudera.oryx.lazarus.serving;
 
 import java.io.IOException;
 import java.util.Collections;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -57,6 +58,7 @@ public final class LazarusServingModelManager extends AbstractServingModelManage
                     int timeIndex = (int) Double.parseDouble(messageArray[0]);
                     String time = LazarusServingUtility.indexToTime(timeIndex);
                     double[] weights = LazarusServingUtility.stringToWeights(message);
+                    System.out.println(Arrays.toString(weights));
                     modelWeights.put(time, weights);
                     break;
                 default:
