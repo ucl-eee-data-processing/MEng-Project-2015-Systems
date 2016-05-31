@@ -54,7 +54,7 @@ public final class LazarusServingModelManager extends AbstractServingModelManage
                 case "MODEL":
                    break;
                 case "UP":
-                    String [] messageArray = message.split("-");
+                    String [] messageArray = message.split("#");
                     int timeIndex = (int) Double.parseDouble(messageArray[0]);
                     String time = LazarusServingUtility.indexToTime(timeIndex);
                     double[] weights = LazarusServingUtility.stringToWeights(message);
